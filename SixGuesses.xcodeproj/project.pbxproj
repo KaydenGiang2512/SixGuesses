@@ -11,6 +11,7 @@
 		8BC5D58928AE0B1D00649C46 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC5D58828AE0B1D00649C46 /* ContentView.swift */; };
 		8BC5D58B28AE0B1E00649C46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BC5D58A28AE0B1E00649C46 /* Assets.xcassets */; };
 		8BC5D58E28AE0B1E00649C46 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BC5D58D28AE0B1E00649C46 /* Preview Assets.xcassets */; };
+		8BC5D59928AE0CBD00649C46 /* 5-Letter-Words in Resources */ = {isa = PBXBuildFile; fileRef = 8BC5D59828AE0CBD00649C46 /* 5-Letter-Words */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		8BC5D58828AE0B1D00649C46 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8BC5D58A28AE0B1E00649C46 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8BC5D58D28AE0B1E00649C46 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8BC5D59828AE0CBD00649C46 /* 5-Letter-Words */ = {isa = PBXFileReference; lastKnownFileType = text; path = "5-Letter-Words"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,8 @@
 		8BC5D58528AE0B1D00649C46 /* SixGuesses */ = {
 			isa = PBXGroup;
 			children = (
+				8BC5D59728AE0C3700649C46 /* GameResources */,
+				8BC5D59628AE0C2900649C46 /* GameData */,
 				8BC5D58628AE0B1D00649C46 /* SixGuessesApp.swift */,
 				8BC5D58828AE0B1D00649C46 /* ContentView.swift */,
 				8BC5D58A28AE0B1E00649C46 /* Assets.xcassets */,
@@ -65,6 +69,21 @@
 				8BC5D58D28AE0B1E00649C46 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8BC5D59628AE0C2900649C46 /* GameData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GameData;
+			sourceTree = "<group>";
+		};
+		8BC5D59728AE0C3700649C46 /* GameResources */ = {
+			isa = PBXGroup;
+			children = (
+				8BC5D59828AE0CBD00649C46 /* 5-Letter-Words */,
+			);
+			path = GameResources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BC5D58E28AE0B1E00649C46 /* Preview Assets.xcassets in Resources */,
+				8BC5D59928AE0CBD00649C46 /* 5-Letter-Words in Resources */,
 				8BC5D58B28AE0B1E00649C46 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
