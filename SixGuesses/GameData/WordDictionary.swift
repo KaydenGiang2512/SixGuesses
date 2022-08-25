@@ -15,7 +15,7 @@ class WordDictionary: ObservableObject {
     wordLength = length
 
     guard
-      let fileUrl = Bundle.main.url(forResource: "5-Letter-Words", withExtension: "txt"),
+      let fileUrl = Bundle.main.url(forResource: "5-Letter-Words", withExtension: ""),
       let dictionary = try? String(contentsOf: fileUrl, encoding: .utf8) else {
         return
       }

@@ -17,7 +17,7 @@ struct WelcomeScreen: View {
                 Spacer()
                 Text("Welcome to 6 Guesses!")
                     .font(.system(size: 50, weight: .bold))
-                Text("The WORDLE we all know and love, but BETTER")
+                Text("The WORDLE game we all know and love, but BETTER")
                     .font(.system(size: 15, weight: .semibold))
                     .multilineTextAlignment(.center)
                     .padding(.vertical, 20)

@@ -10,6 +10,7 @@ import SwiftUI
 struct GameView: View {
     @StateObject var game = SixGuesses()
     @State private var showResults = false
+    @State private var showStats = false
     
     var body: some View {
         VStack {
@@ -34,6 +35,7 @@ struct GameView: View {
         }
         .frame(alignment: .top)
         .padding([.bottom], 10)
+//        .navigationBarTitleDisplayMode(.inline)
 
     }
 }
