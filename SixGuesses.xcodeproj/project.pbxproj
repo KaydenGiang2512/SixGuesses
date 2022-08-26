@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		8B03CEBF28B75DA800B262D4 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B03CEBE28B75DA800B262D4 /* StatisticsView.swift */; };
+		8B0DAE0D28B882A700FC9950 /* win-music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B0DAE0C28B882A700FC9950 /* win-music.mp3 */; };
+		8B0DAE0F28B8831F00FC9950 /* SoundProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0DAE0E28B8831F00FC9950 /* SoundProcessor.swift */; };
+		8B0DAE1128B88D4F00FC9950 /* lose-music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B0DAE1028B88D4F00FC9950 /* lose-music.mp3 */; };
+		8B80AB4228B895D900A1DE1F /* InstructionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B80AB4128B895D900A1DE1F /* InstructionsView.swift */; };
+		8B80AB4428B89D7000A1DE1F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B80AB4328B89D7000A1DE1F /* SettingsView.swift */; };
+		8B80AB4628B8A68C00A1DE1F /* background-music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B80AB4528B8A68C00A1DE1F /* background-music.mp3 */; };
 		8B93116628B7466A009F6650 /* WordDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B93116528B7466A009F6650 /* WordDictionary.swift */; };
 		8B93116828B74715009F6650 /* KeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B93116728B74715009F6650 /* KeyView.swift */; };
 		8B93116A28B7478C009F6650 /* SixGuesses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B93116928B7478C009F6650 /* SixGuesses.swift */; };
@@ -19,11 +25,8 @@
 		8B93117728B74C35009F6650 /* CurrentGuessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B93117628B74C35009F6650 /* CurrentGuessView.swift */; };
 		8B93117928B74C8B009F6650 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B93117828B74C8B009F6650 /* EmptyView.swift */; };
 		8B93117B28B74CD4009F6650 /* GuessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B93117A28B74CD4009F6650 /* GuessView.swift */; };
-		8B93117D28B74D3C009F6650 /* ActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B93117C28B74D3C009F6650 /* ActionView.swift */; };
 		8B93117F28B74DB8009F6650 /* Statistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B93117E28B74DB8009F6650 /* Statistics.swift */; };
-		8B93118228B755DD009F6650 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B93118128B755DD009F6650 /* WelcomeView.swift */; };
 		8B93118628B758AF009F6650 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B93118528B758AF009F6650 /* MainMenuView.swift */; };
-		8B93118828B758FB009F6650 /* WelcomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B93118728B758FB009F6650 /* WelcomeScreen.swift */; };
 		8B93118A28B75C7F009F6650 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B93118928B75C7F009F6650 /* GameView.swift */; };
 		8BC5D58728AE0B1D00649C46 /* SixGuessesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC5D58628AE0B1D00649C46 /* SixGuessesApp.swift */; };
 		8BC5D58928AE0B1D00649C46 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC5D58828AE0B1D00649C46 /* ContentView.swift */; };
@@ -34,6 +37,12 @@
 
 /* Begin PBXFileReference section */
 		8B03CEBE28B75DA800B262D4 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
+		8B0DAE0C28B882A700FC9950 /* win-music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "win-music.mp3"; path = "../../../../Downloads/win-music.mp3"; sourceTree = "<group>"; };
+		8B0DAE0E28B8831F00FC9950 /* SoundProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundProcessor.swift; sourceTree = "<group>"; };
+		8B0DAE1028B88D4F00FC9950 /* lose-music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "lose-music.mp3"; path = "../../../../Downloads/lose-music.mp3"; sourceTree = "<group>"; };
+		8B80AB4128B895D900A1DE1F /* InstructionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsView.swift; sourceTree = "<group>"; };
+		8B80AB4328B89D7000A1DE1F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		8B80AB4528B8A68C00A1DE1F /* background-music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "background-music.mp3"; path = "../../../../Downloads/background-music.mp3"; sourceTree = "<group>"; };
 		8B93116528B7466A009F6650 /* WordDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDictionary.swift; sourceTree = "<group>"; };
 		8B93116728B74715009F6650 /* KeyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyView.swift; sourceTree = "<group>"; };
 		8B93116928B7478C009F6650 /* SixGuesses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SixGuesses.swift; sourceTree = "<group>"; };
@@ -45,11 +54,8 @@
 		8B93117628B74C35009F6650 /* CurrentGuessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentGuessView.swift; sourceTree = "<group>"; };
 		8B93117828B74C8B009F6650 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		8B93117A28B74CD4009F6650 /* GuessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessView.swift; sourceTree = "<group>"; };
-		8B93117C28B74D3C009F6650 /* ActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionView.swift; sourceTree = "<group>"; };
 		8B93117E28B74DB8009F6650 /* Statistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistics.swift; sourceTree = "<group>"; };
-		8B93118128B755DD009F6650 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		8B93118528B758AF009F6650 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
-		8B93118728B758FB009F6650 /* WelcomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreen.swift; sourceTree = "<group>"; };
 		8B93118928B75C7F009F6650 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		8BC5D58328AE0B1D00649C46 /* SixGuesses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SixGuesses.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BC5D58628AE0B1D00649C46 /* SixGuessesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SixGuessesApp.swift; sourceTree = "<group>"; };
@@ -76,6 +82,17 @@
 				8B03CEBE28B75DA800B262D4 /* StatisticsView.swift */,
 			);
 			path = ResultsViews;
+			sourceTree = "<group>";
+		};
+		8B0DAE0B28B8828E00FC9950 /* SoundEffects */ = {
+			isa = PBXGroup;
+			children = (
+				8B80AB4528B8A68C00A1DE1F /* background-music.mp3 */,
+				8B0DAE1028B88D4F00FC9950 /* lose-music.mp3 */,
+				8B0DAE0C28B882A700FC9950 /* win-music.mp3 */,
+				8B0DAE0E28B8831F00FC9950 /* SoundProcessor.swift */,
+			);
+			path = SoundEffects;
 			sourceTree = "<group>";
 		};
 		8B93116128B7459F009F6650 /* KeyboardInputViews */ = {
@@ -107,7 +124,6 @@
 				8B93117628B74C35009F6650 /* CurrentGuessView.swift */,
 				8B93117828B74C8B009F6650 /* EmptyView.swift */,
 				8B93117A28B74CD4009F6650 /* GuessView.swift */,
-				8B93117C28B74D3C009F6650 /* ActionView.swift */,
 				8B93118928B75C7F009F6650 /* GameView.swift */,
 			);
 			path = GameViews;
@@ -117,9 +133,9 @@
 			isa = PBXGroup;
 			children = (
 				8BC5D58828AE0B1D00649C46 /* ContentView.swift */,
-				8B93118128B755DD009F6650 /* WelcomeView.swift */,
 				8B93118528B758AF009F6650 /* MainMenuView.swift */,
-				8B93118728B758FB009F6650 /* WelcomeScreen.swift */,
+				8B80AB4128B895D900A1DE1F /* InstructionsView.swift */,
+				8B80AB4328B89D7000A1DE1F /* SettingsView.swift */,
 			);
 			path = MainViews;
 			sourceTree = "<group>";
@@ -143,6 +159,7 @@
 		8BC5D58528AE0B1D00649C46 /* SixGuesses */ = {
 			isa = PBXGroup;
 			children = (
+				8B0DAE0B28B8828E00FC9950 /* SoundEffects */,
 				8B03CEC028B75E7100B262D4 /* ResultsViews */,
 				8B93118028B755B6009F6650 /* MainViews */,
 				8B93117128B74B56009F6650 /* GameViews */,
@@ -232,7 +249,10 @@
 			files = (
 				8BC5D58E28AE0B1E00649C46 /* Preview Assets.xcassets in Resources */,
 				8BC5D59928AE0CBD00649C46 /* 5-Letter-Words in Resources */,
+				8B0DAE1128B88D4F00FC9950 /* lose-music.mp3 in Resources */,
 				8BC5D58B28AE0B1E00649C46 /* Assets.xcassets in Resources */,
+				8B80AB4628B8A68C00A1DE1F /* background-music.mp3 in Resources */,
+				8B0DAE0D28B882A700FC9950 /* win-music.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,19 +264,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B93116828B74715009F6650 /* KeyView.swift in Sources */,
+				8B80AB4428B89D7000A1DE1F /* SettingsView.swift in Sources */,
 				8B03CEBF28B75DA800B262D4 /* StatisticsView.swift in Sources */,
 				8B93116A28B7478C009F6650 /* SixGuesses.swift in Sources */,
 				8BC5D58928AE0B1D00649C46 /* ContentView.swift in Sources */,
-				8B93118228B755DD009F6650 /* WelcomeView.swift in Sources */,
 				8B93116E28B748DE009F6650 /* WordGuess.swift in Sources */,
 				8B93117928B74C8B009F6650 /* EmptyView.swift in Sources */,
 				8B93116C28B747E7009F6650 /* KeyboardView.swift in Sources */,
 				8B93118628B758AF009F6650 /* MainMenuView.swift in Sources */,
-				8B93117D28B74D3C009F6650 /* ActionView.swift in Sources */,
 				8B93116628B7466A009F6650 /* WordDictionary.swift in Sources */,
+				8B80AB4228B895D900A1DE1F /* InstructionsView.swift in Sources */,
 				8B93117328B74B70009F6650 /* BoardView.swift in Sources */,
 				8B93117528B74BDB009F6650 /* ResultView.swift in Sources */,
-				8B93118828B758FB009F6650 /* WelcomeScreen.swift in Sources */,
+				8B0DAE0F28B8831F00FC9950 /* SoundProcessor.swift in Sources */,
 				8B93118A28B75C7F009F6650 /* GameView.swift in Sources */,
 				8B93117B28B74CD4009F6650 /* GuessView.swift in Sources */,
 				8B93117728B74C35009F6650 /* CurrentGuessView.swift in Sources */,

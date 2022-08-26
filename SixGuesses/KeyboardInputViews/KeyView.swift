@@ -39,7 +39,8 @@ struct KeyView_Previews: PreviewProvider {
   static var previews: some View {
     let game = SixGuesses()
     Group {
-      KeyView(game: game, key: "<")
+        KeyView(game: game, key: "<")
+        KeyView(game: game, key: ">")
     }
   }
 }

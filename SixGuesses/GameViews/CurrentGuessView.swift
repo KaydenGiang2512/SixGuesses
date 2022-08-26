@@ -65,7 +65,7 @@ struct CurrentGuessView: View {
           .overlay(
             Group {
               if guess.status == .invalidWord {
-                Text("Word not in dictionary.")
+                Text("Word not in dictionary!")
                   .foregroundColor(.red)
                   .fontWeight(.bold)
                   .background(Color(UIColor.systemBackground).opacity(0.8))

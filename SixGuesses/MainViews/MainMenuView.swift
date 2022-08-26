@@ -8,17 +8,36 @@
 import SwiftUI
 
 struct MainMenuView: View {
-    @StateObject var game = SixGuesses()
     
     var body: some View {
         ZStack {
-//            Color(red: 255 / 255, green: 255 / 255, blue: 0 / 255)
-//                .edgesIgnoringSafeArea(.all)
             NavigationView {
                 ZStack {
-                    Color(red: 255 / 255, green: 255 / 255, blue: 0 / 255, opacity: 0.5)
+                    Color(red: 255 / 255, green: 255 / 255, blue: 0 / 255, opacity: 0.4)
                         .edgesIgnoringSafeArea(.all)
                     VStack {
+                        HStack {
+                            NavigationLink {
+                                SettingsView()
+                            } label: {
+                              Image(systemName: "gear")
+                                .imageScale(.large)
+                                .accessibilityLabel("Settings")
+                                .foregroundColor(.black)
+                            }
+                            Spacer()
+                            NavigationLink {
+                                InstructionsView()
+                            } label: {
+                                Image(systemName: "questionmark.circle")
+                                    .imageScale(.large)
+                                    .accessibilityLabel("Instructions")
+                                    .foregroundColor(.black)
+                            }
+                            
+                        }
+                        .padding(.horizontal)
+                        Spacer()
                         Text("6 GUESSES")
                             .font(.system(size: 50))
                             .fontWeight(.bold)
@@ -32,6 +51,7 @@ struct MainMenuView: View {
                         Image("thinking-man")
                             .resizable()
                             .scaledToFit()
+                            .frame(width: 200, height: 200)
                         Spacer()
                         NavigationLink {
                             GameView()
@@ -40,7 +60,7 @@ struct MainMenuView: View {
                                 .fill(.blue)
                                 .frame(width: 250, height: 75)
                                 .overlay {
-                                    Text("Play Now")
+                                    Text("New Game")
                                         .font(.system(size: 30))
                                         .fontWeight(.bold)
                                         .padding()
@@ -48,28 +68,28 @@ struct MainMenuView: View {
 
                                 }
                         }
-                        Spacer()
                         NavigationLink {
-                            StatisticsView(stats: Statistics(gameRecord: game.gameRecord))
+                            GameView()
                         } label: {
                             RoundedRectangle(cornerRadius: 25)
                                 .fill(.blue)
                                 .frame(width: 250, height: 75)
                                 .overlay {
-                                    Text("Game Stats")
+                                    Text("Resume game")
                                         .font(.system(size: 30))
                                         .fontWeight(.bold)
                                         .padding()
                                         .foregroundColor(.white)
-                                    
-
                                 }
                         }
                     }
+                    .navigationBarHidden(true)
                 }
             }
-
         }
+        .onAppear(perform: {
+            playSound(sound: "background-music", type: "mp3", numberOfLoops: -1)
+        })
     }
 }
 
