@@ -20,3 +20,14 @@ func playSound(sound: String, type: String, numberOfLoops: Int) {
         }
     }
 }
+
+func stopSound(sound: String, type: String) {
+    if let filePath = Bundle.main.path(forResource: sound, ofType: type) {
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: filePath))
+            audioPlayer?.stop()
+        } catch {
+            print("Processing error: The specified file cannot be found/stopped!")
+        }
+    }
+}

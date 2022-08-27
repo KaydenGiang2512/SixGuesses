@@ -28,6 +28,8 @@
 		8B93117F28B74DB8009F6650 /* Statistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B93117E28B74DB8009F6650 /* Statistics.swift */; };
 		8B93118628B758AF009F6650 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B93118528B758AF009F6650 /* MainMenuView.swift */; };
 		8B93118A28B75C7F009F6650 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B93118928B75C7F009F6650 /* GameView.swift */; };
+		8BA867BC28B9DB2000D0A272 /* AppColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA867BB28B9DB2000D0A272 /* AppColorScheme.swift */; };
+		8BA867BF28B9DBE800D0A272 /* UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA867BE28B9DBE800D0A272 /* UIWindow.swift */; };
 		8BC5D58728AE0B1D00649C46 /* SixGuessesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC5D58628AE0B1D00649C46 /* SixGuessesApp.swift */; };
 		8BC5D58928AE0B1D00649C46 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC5D58828AE0B1D00649C46 /* ContentView.swift */; };
 		8BC5D58B28AE0B1E00649C46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BC5D58A28AE0B1E00649C46 /* Assets.xcassets */; };
@@ -57,6 +59,8 @@
 		8B93117E28B74DB8009F6650 /* Statistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistics.swift; sourceTree = "<group>"; };
 		8B93118528B758AF009F6650 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
 		8B93118928B75C7F009F6650 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		8BA867BB28B9DB2000D0A272 /* AppColorScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColorScheme.swift; sourceTree = "<group>"; };
+		8BA867BE28B9DBE800D0A272 /* UIWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindow.swift; sourceTree = "<group>"; };
 		8BC5D58328AE0B1D00649C46 /* SixGuesses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SixGuesses.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BC5D58628AE0B1D00649C46 /* SixGuessesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SixGuessesApp.swift; sourceTree = "<group>"; };
 		8BC5D58828AE0B1D00649C46 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -112,6 +116,7 @@
 				8B93116D28B748DE009F6650 /* WordGuess.swift */,
 				8B93116F28B7490E009F6650 /* GuessedLetter.swift */,
 				8B93117E28B74DB8009F6650 /* Statistics.swift */,
+				8BA867BB28B9DB2000D0A272 /* AppColorScheme.swift */,
 			);
 			path = GameData;
 			sourceTree = "<group>";
@@ -140,6 +145,14 @@
 			path = MainViews;
 			sourceTree = "<group>";
 		};
+		8BA867BD28B9DBD300D0A272 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8BA867BE28B9DBE800D0A272 /* UIWindow.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		8BC5D57A28AE0B1D00649C46 = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +172,7 @@
 		8BC5D58528AE0B1D00649C46 /* SixGuesses */ = {
 			isa = PBXGroup;
 			children = (
+				8BA867BD28B9DBD300D0A272 /* Extensions */,
 				8B0DAE0B28B8828E00FC9950 /* SoundEffects */,
 				8B03CEC028B75E7100B262D4 /* ResultsViews */,
 				8B93118028B755B6009F6650 /* MainViews */,
@@ -264,6 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B93116828B74715009F6650 /* KeyView.swift in Sources */,
+				8BA867BC28B9DB2000D0A272 /* AppColorScheme.swift in Sources */,
 				8B80AB4428B89D7000A1DE1F /* SettingsView.swift in Sources */,
 				8B03CEBF28B75DA800B262D4 /* StatisticsView.swift in Sources */,
 				8B93116A28B7478C009F6650 /* SixGuesses.swift in Sources */,
@@ -277,6 +292,7 @@
 				8B93117328B74B70009F6650 /* BoardView.swift in Sources */,
 				8B93117528B74BDB009F6650 /* ResultView.swift in Sources */,
 				8B0DAE0F28B8831F00FC9950 /* SoundProcessor.swift in Sources */,
+				8BA867BF28B9DBE800D0A272 /* UIWindow.swift in Sources */,
 				8B93118A28B75C7F009F6650 /* GameView.swift in Sources */,
 				8B93117B28B74CD4009F6650 /* GuessView.swift in Sources */,
 				8B93117728B74C35009F6650 /* CurrentGuessView.swift in Sources */,

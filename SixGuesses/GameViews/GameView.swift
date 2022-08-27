@@ -28,16 +28,17 @@ struct GameView: View {
                 Spacer()
                 HStack {
                     NavigationLink {
-                        StatisticsView(stats: Statistics(gameRecord: game.gameRecord))
+                        InstructionsView()
                     } label: {
-                        Image(systemName: "chart.bar.fill")
+                        Image(systemName: "questionmark.circle")
                             .imageScale(.large)
-                            .accessibilityLabel("Statistics")
+                            .accessibilityLabel("Instructions")
                             .foregroundColor(.white)
                     }
                     Spacer()
                     Button {
                         game.newGame()
+                        playSound(sound: "background-music", type: "mp3", numberOfLoops: -1)
                     } label: {
                         Text("New Game")
                             .fontWeight(.semibold)

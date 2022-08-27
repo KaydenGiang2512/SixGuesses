@@ -42,6 +42,7 @@ struct StatisticsView: View {
                             .frame(width: barLength,
                                 height: 20.0
                             )
+                            .foregroundColor(.blue)
                         Text("\(barCount)")
                     }
             }
