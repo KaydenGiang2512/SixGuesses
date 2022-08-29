@@ -11,57 +11,96 @@ struct GameView: View {
     @StateObject var game = SixGuesses()
     @State private var showResults = false
     @State private var showStats = false
+    @Environment(\.scenePhase) var scenePhase
     
     var body: some View {
-        ZStack {
-            Color.blue.opacity(0.5).edgesIgnoringSafeArea(.all)
-            
-            VStack {
-                Text("6 Chances to Guess the Word!")
-                    .font(.title2)
-                    .fontWeight(.bold)
-                    .accessibilityAddTraits(.isHeader)
-                    .foregroundColor(.white)
-                BoardView(game: game)
-                KeyboardView(game: game)
-                    .padding(5)
-                Spacer()
-                HStack {
-                    NavigationLink {
-                        InstructionsView()
-                    } label: {
-                        Image(systemName: "questionmark.circle")
+        NavigationView {
+            ZStack {
+                Color.blue.opacity(0.5).edgesIgnoringSafeArea(.all)
+                
+                VStack {
+                    HStack {
+                        NavigationLink {
+                            SettingsView()
+                        } label: {
+                            Image(systemName: "gear")
                             .imageScale(.large)
-                            .accessibilityLabel("Instructions")
+                            .accessibilityLabel("Settings")
                             .foregroundColor(.white)
+                        }
+                        Spacer()
+                        NavigationLink {
+                            InstructionsView()
+                        } label: {
+                            Image(systemName: "questionmark.circle.fill")
+                                .imageScale(.large)
+                                .accessibilityLabel("Instructions")
+                                .foregroundColor(.white)
+                        }
                     }
+                    .padding(.horizontal)
                     Spacer()
-                    Button {
-                        game.newGame()
-                        playSound(sound: "background-music", type: "mp3", numberOfLoops: -1)
-                    } label: {
-                        Text("New Game")
-                            .fontWeight(.semibold)
-                            .font(.system(size: 20))
-                            .foregroundColor(.white)
+                    Text("Guess the Word!")
+                        .font(.title2)
+                        .fontWeight(.bold)
+                        .accessibilityAddTraits(.isHeader)
+                        .foregroundColor(.white)
+                    BoardView(game: game)
+                    KeyboardView(game: game)
+                        .padding(5)
+                    Spacer()
+                    HStack {
+                        NavigationLink {
+                            StatisticsView(stats: Statistics(gameRecord: game.gameRecord))
+                        } label: {
+                            Image(systemName: "chart.bar.fill")
+                                .imageScale(.large)
+                                .accessibilityLabel("Statistics")
+                                .foregroundColor(.white)
+                        }
+                        Spacer()
+                        Button {
+                            game.newGame()
+                            playSound(sound: "background-music", type: "mp3", numberOfLoops: -1)
+                        } label: {
+                            Text("New Game")
+                                .fontWeight(.semibold)
+                                .font(.system(size: 20))
+                                .foregroundColor(.white)
+                        }
+                    }
+                    .padding(.horizontal)
+                }
+                .sheet(isPresented: $showResults) {
+                    ResultView(game: game)
+                }
+                .onChange(of: game.status) { newStatus in
+                    // 2
+                    if newStatus == .won || newStatus == .lost {
+                        // 3
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                            showResults = true
+                        }
                     }
                 }
-                .padding(.horizontal)
-            }
-            .sheet(isPresented: $showResults) {
-                ResultView(game: game)
-            }
-            .onChange(of: game.status) { newStatus in
-              // 2
-              if newStatus == .won || newStatus == .lost {
-                // 3
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                  showResults = true
+                .frame(alignment: .top)
+                .padding([.bottom], 10)
+                .navigationBarTitleDisplayMode(.inline)
+                .navigationBarHidden(true)
+                // 1
+                .onChange(of: scenePhase) { newPhase in
+                    // 2
+                    if newPhase == .active {
+                        if game.status == .new && !game.gameState.isEmpty {
+                            game.loadState()
+                        }
+                    }
+                    // 3
+                    if newPhase == .background || newPhase == .inactive {
+                        game.saveState()
+                    }
                 }
-              }
             }
-            .frame(alignment: .top)
-            .padding([.bottom], 10)
         }
     }
 }

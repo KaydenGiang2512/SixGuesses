@@ -14,6 +14,8 @@
 		8B80AB4228B895D900A1DE1F /* InstructionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B80AB4128B895D900A1DE1F /* InstructionsView.swift */; };
 		8B80AB4428B89D7000A1DE1F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B80AB4328B89D7000A1DE1F /* SettingsView.swift */; };
 		8B80AB4628B8A68C00A1DE1F /* background-music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8B80AB4528B8A68C00A1DE1F /* background-music.mp3 */; };
+		8B82D48028BC8BBB008F56B0 /* ShowResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B82D47F28BC8BBA008F56B0 /* ShowResultView.swift */; };
+		8B82D48228BC934F008F56B0 /* ActivitySheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B82D48128BC934F008F56B0 /* ActivitySheetView.swift */; };
 		8B93116628B7466A009F6650 /* WordDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B93116528B7466A009F6650 /* WordDictionary.swift */; };
 		8B93116828B74715009F6650 /* KeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B93116728B74715009F6650 /* KeyView.swift */; };
 		8B93116A28B7478C009F6650 /* SixGuesses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B93116928B7478C009F6650 /* SixGuesses.swift */; };
@@ -45,6 +47,8 @@
 		8B80AB4128B895D900A1DE1F /* InstructionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsView.swift; sourceTree = "<group>"; };
 		8B80AB4328B89D7000A1DE1F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		8B80AB4528B8A68C00A1DE1F /* background-music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "background-music.mp3"; path = "../../../../Downloads/background-music.mp3"; sourceTree = "<group>"; };
+		8B82D47F28BC8BBA008F56B0 /* ShowResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowResultView.swift; sourceTree = "<group>"; };
+		8B82D48128BC934F008F56B0 /* ActivitySheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitySheetView.swift; sourceTree = "<group>"; };
 		8B93116528B7466A009F6650 /* WordDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDictionary.swift; sourceTree = "<group>"; };
 		8B93116728B74715009F6650 /* KeyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyView.swift; sourceTree = "<group>"; };
 		8B93116928B7478C009F6650 /* SixGuesses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SixGuesses.swift; sourceTree = "<group>"; };
@@ -84,6 +88,8 @@
 			isa = PBXGroup;
 			children = (
 				8B03CEBE28B75DA800B262D4 /* StatisticsView.swift */,
+				8B82D47F28BC8BBA008F56B0 /* ShowResultView.swift */,
+				8B82D48128BC934F008F56B0 /* ActivitySheetView.swift */,
 			);
 			path = ResultsViews;
 			sourceTree = "<group>";
@@ -280,12 +286,14 @@
 				8B93116828B74715009F6650 /* KeyView.swift in Sources */,
 				8BA867BC28B9DB2000D0A272 /* AppColorScheme.swift in Sources */,
 				8B80AB4428B89D7000A1DE1F /* SettingsView.swift in Sources */,
+				8B82D48228BC934F008F56B0 /* ActivitySheetView.swift in Sources */,
 				8B03CEBF28B75DA800B262D4 /* StatisticsView.swift in Sources */,
 				8B93116A28B7478C009F6650 /* SixGuesses.swift in Sources */,
 				8BC5D58928AE0B1D00649C46 /* ContentView.swift in Sources */,
 				8B93116E28B748DE009F6650 /* WordGuess.swift in Sources */,
 				8B93117928B74C8B009F6650 /* EmptyView.swift in Sources */,
 				8B93116C28B747E7009F6650 /* KeyboardView.swift in Sources */,
+				8B82D48028BC8BBB008F56B0 /* ShowResultView.swift in Sources */,
 				8B93118628B758AF009F6650 /* MainMenuView.swift in Sources */,
 				8B93116628B7466A009F6650 /* WordDictionary.swift in Sources */,
 				8B80AB4228B895D900A1DE1F /* InstructionsView.swift in Sources */,

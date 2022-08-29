@@ -16,10 +16,17 @@ struct StatisticsView: View {
           Text("All-time Statistics")
             .font(.title)
             .fontWeight(.bold)
-          Text("Games played: \(stats.gamesPlayed) ") +
-          Text("Games won: \(stats.gamesWon) (\(stats.percentageWon) %)")
-          Text("Win Streak: \(stats.currentWinStreak) ") +
-          Text("Longest Streak: \(stats.maxWinStreak)")
+            .padding(.vertical)
+            Text("Games played: \(stats.gamesPlayed) ")
+                .fontWeight(.semibold)
+            Text("Games won: \(stats.gamesWon)")
+                .fontWeight(.semibold)
+            Text("Winning percentage: \(stats.percentageWon)%")
+                .fontWeight(.semibold)
+            Text("Current Winning Streak: \(stats.currentWinStreak) ")
+                .fontWeight(.semibold)
+            Text("Longest Winning Streak: \(stats.maxWinStreak)")
+                .fontWeight(.semibold)
         }
         Spacer()
         // 1
@@ -38,16 +45,22 @@ struct StatisticsView: View {
                     HStack {
                         // 5
                         Text("\(index + 1)")
+                            .fontWeight(.semibold)
                         Rectangle()
                             .frame(width: barLength,
                                 height: 20.0
                             )
                             .foregroundColor(.blue)
-                        Text("\(barCount)")
+                        Text("\(barCount) time(s)")
                     }
             }
             Spacer()
-            
+            Button {
+                
+            } label: {
+                Text("Reset Game Stats")
+                    .font(.title2)
+            }
         }
       }
 

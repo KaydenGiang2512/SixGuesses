@@ -7,14 +7,12 @@
 
 import SwiftUI
 
-struct MainMenuView: View {
-    @StateObject var csManager = AppColorScheme()
-    
+struct MainMenuView: View {    
     var body: some View {
         NavigationView {
             ZStack {
-                Color(red: 255 / 255, green: 255 / 255, blue: 0 / 255, opacity: 0.4)
-                    .edgesIgnoringSafeArea(.all)
+                Color.yellow.opacity(0.3).edgesIgnoringSafeArea(.all)
+                
                 VStack {
                     HStack {
                         NavigationLink {
@@ -47,10 +45,15 @@ struct MainMenuView: View {
                                 endPoint: .trailing
                             )
                         )
-                    Image("thinking-man")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 200, height: 200)
+                    Circle()
+                        .scale(0.75)
+                        .fill(Color.white)
+                        .overlay {
+                            Image("thinking-man")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 200, height: 200)
+                        }
                     Spacer()
                     NavigationLink {
                         GameView()
@@ -86,7 +89,6 @@ struct MainMenuView: View {
         }
         .onAppear(perform: {
             playSound(sound: "background-music", type: "mp3", numberOfLoops: -1)
-            csManager.applyColorScheme()
         })
     }
 }

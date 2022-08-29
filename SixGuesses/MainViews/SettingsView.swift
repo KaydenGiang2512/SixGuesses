@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SettingsView: View {
     @EnvironmentObject var csManager: AppColorScheme
+    @EnvironmentObject var game: SixGuesses
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
@@ -18,23 +19,12 @@ struct SettingsView: View {
                 Picker("Display mode", selection: $csManager.colorScheme) {
                     Text("Light").tag(ColorScheme.light)
                     Text("Dark").tag(ColorScheme.dark)
-                    Text("System").tag(ColorScheme.system)
+                    Text("System").tag(ColorScheme.unspecified)
                 }
                 .pickerStyle(.segmented)
-                Spacer()
             }
             .navigationTitle("Game Settings")
             .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        dismiss()
-                    } label: {
-                        Text("**X**")
-                            .foregroundColor(.black)
-                    }
-                }
-            }
         }
     }
 }

@@ -68,7 +68,7 @@ struct CurrentGuessView: View {
                 Text("Word not in dictionary!")
                   .foregroundColor(.red)
                   .fontWeight(.bold)
-                  .background(Color(UIColor.systemBackground).opacity(0.8))
+                  .background(Color(UIColor.systemBackground))
                   .onAppear {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
                       guess.status = .pending
