@@ -15,8 +15,6 @@ struct ResultView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Color.yellow.opacity(0.4).edgesIgnoringSafeArea(.all)
-                
                 VStack {
                     if game.status == .won {
                         Text("You got it!")
@@ -28,9 +26,10 @@ struct ResultView: View {
                             .onAppear(perform: {
                                 playSound(sound: "win-music", type: "mp3", numberOfLoops: -1)
                             })
+                        Spacer()
                         Image("well-done")
-                            .scaledToFit()
-
+                            .resizable()
+                            .frame(width: 250, height: 150)
                     } else {
                         Text("You failed to guess the word in \(game.maxGuesses) attempts.")
                             .font(.title)
@@ -41,7 +40,8 @@ struct ResultView: View {
                                 playSound(sound: "lose-music", type: "mp3", numberOfLoops: -1)
                             })
                         Image("you-lost")
-                            .scaledToFit()
+                            .resizable()
+                            .frame(width: 250, height: 150)
                     }
                     Text("The word was \(game.targetWord).")
                         .font(.title2)
@@ -52,10 +52,14 @@ struct ResultView: View {
                             .underline()
                     })
                     Spacer()
-                    Text("Share your results with friends!")
-                        .font(.title2)
-                        .fontWeight(.bold)
-                    ShowResultView(game: game)
+                    VStack {
+                        Text("Share your results with friends!")
+                            .font(.title2)
+                            .fontWeight(.bold)
+                        ShowResultView(game: game)
+                    }
+                    .border(.black, width: 5)
+                    .padding(.horizontal)
                     Spacer()
                 }
                 .navigationTitle("")
@@ -79,8 +83,8 @@ struct ResultView: View {
 struct ResultView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-//            ResultView(game: SixGuesses.wonGame())
-//            ResultView(game: SixGuesses.lostGame())
+            ResultView(game: SixGuesses.wonGame())
+            ResultView(game: SixGuesses.lostGame())
         }
     }
 }

@@ -272,7 +272,6 @@ class SixGuesses: ObservableObject {
             addKey(letter: newGuess)
         }
     }
-
 }
 
 extension SixGuesses {

@@ -17,7 +17,6 @@ struct ShowResultView: View {
                 Text(text)
                     .foregroundColor(Color.green)
                     .frame(maxWidth: .infinity)
-                Spacer()
                 HStack {
                     Button {
                         showShare = true
@@ -37,7 +36,6 @@ struct ShowResultView: View {
             let text = game.shareResultText ?? ""
             ActivitySheetView(activityItems: [text])
         }
-
     }
 }
 
