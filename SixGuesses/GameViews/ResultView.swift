@@ -24,12 +24,11 @@ struct ResultView: View {
                             .textCase(.uppercase)
                             .padding()
                             .onAppear(perform: {
-                                playSound(sound: "win-music", type: "mp3", numberOfLoops: -1)
+                                playMusic(sound: "win-music", type: "mp3", numberOfLoops: -1)
                             })
-                        Spacer()
                         Image("well-done")
                             .resizable()
-                            .frame(width: 250, height: 150)
+                            .frame(width: 300, height: 200)
                     } else {
                         Text("You failed to guess the word in \(game.maxGuesses) attempts.")
                             .font(.title)
@@ -37,11 +36,11 @@ struct ResultView: View {
                             .foregroundColor(.red)
                             .multilineTextAlignment(.center)
                             .onAppear(perform: {
-                                playSound(sound: "lose-music", type: "mp3", numberOfLoops: -1)
+                                playMusic(sound: "lose-music", type: "mp3", numberOfLoops: -1)
                             })
                         Image("you-lost")
                             .resizable()
-                            .frame(width: 250, height: 150)
+                            .frame(width: 300, height: 200)
                     }
                     Text("The word was \(game.targetWord).")
                         .font(.title2)
@@ -58,7 +57,6 @@ struct ResultView: View {
                             .fontWeight(.bold)
                         ShowResultView(game: game)
                     }
-                    .border(.black, width: 5)
                     .padding(.horizontal)
                     Spacer()
                 }
@@ -68,8 +66,8 @@ struct ResultView: View {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button {
                             dismiss()
-                            stopSound(sound: "win-music", type: "mp3")
-                            stopSound(sound: "lose-music", type: "mp3")
+                            stopMusic(sound: "win-music", type: "mp3")
+                            stopMusic(sound: "lose-music", type: "mp3")
                         } label: {
                             Text("**X**")
                         }

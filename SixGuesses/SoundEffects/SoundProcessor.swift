@@ -9,7 +9,7 @@ import AVFoundation
 
 var audioPlayer: AVAudioPlayer?
 
-func playSound(sound: String, type: String, numberOfLoops: Int) {
+func playMusic(sound: String, type: String, numberOfLoops: Int) {
     if let filePath = Bundle.main.path(forResource: sound, ofType: type) {
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: filePath))
@@ -21,7 +21,18 @@ func playSound(sound: String, type: String, numberOfLoops: Int) {
     }
 }
 
-func stopSound(sound: String, type: String) {
+func playSFX(sound: String, type: String) {
+    if let filePath = Bundle.main.path(forResource: sound, ofType: type) {
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: filePath))
+            audioPlayer?.play()
+        } catch {
+            print("Processing error: The specified file cannot be found/played!")
+        }
+    }
+}
+
+func stopMusic(sound: String, type: String) {
     if let filePath = Bundle.main.path(forResource: sound, ofType: type) {
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: filePath))

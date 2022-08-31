@@ -16,7 +16,6 @@ struct ShowResultView: View {
             if let text = game.shareResultText {
                 Text(text)
                     .foregroundColor(Color.green)
-                    .frame(maxWidth: .infinity)
                 HStack {
                     Button {
                         showShare = true

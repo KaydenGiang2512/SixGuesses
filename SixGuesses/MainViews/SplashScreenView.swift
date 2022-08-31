@@ -8,8 +8,33 @@
 import SwiftUI
 
 struct SplashScreenView: View {
+    @StateObject var csManager = AppColorScheme()
+    @State var isActive: Bool = false
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            if self.isActive {
+                GameView()
+                    .environmentObject(csManager)
+                    .onAppear {
+                        csManager.applyColorScheme()
+                    }
+                    .navigationViewStyle(.stack)
+            } else {
+                Image("splash-background")
+                    .resizable()
+                    .edgesIgnoringSafeArea(.all)
+            }
+        }
+        .onAppear {
+            // 6.
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+                // 7.
+                withAnimation {
+                    self.isActive = true
+                }
+            }
+        }
     }
 }
 

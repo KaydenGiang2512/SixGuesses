@@ -11,11 +11,7 @@ struct ContentView: View {
     @StateObject var csManager = AppColorScheme()
     
     var body: some View {
-        GameView()
-            .environmentObject(csManager)
-            .onAppear {
-                csManager.applyColorScheme()
-            }
+        SplashScreenView()
     }
 }
 

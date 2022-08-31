@@ -22,10 +22,12 @@ struct SettingsView: View {
                     Text("System").tag(ColorScheme.unspecified)
                 }
                 .pickerStyle(.segmented)
+                Spacer()
             }
-            .navigationTitle("Game Settings")
+            .navigationBarTitle("Game Settings")
             .navigationBarTitleDisplayMode(.inline)
         }
+        .navigationViewStyle(.stack)
     }
 }
 

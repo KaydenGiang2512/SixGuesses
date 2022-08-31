@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct StatisticsView: View {
-    var stats: Statistics
+    @ObservedObject var stats: Statistics
 
     var body: some View {
         VStack(spacing: 15.0) {
@@ -29,7 +29,6 @@ struct StatisticsView: View {
                     .fontWeight(.semibold)
             }
             Spacer()
-            // 1
             VStack(alignment: .leading) {
                 Text("Winning Guess Distribution")
                     .font(.title)
@@ -54,14 +53,13 @@ struct StatisticsView: View {
                         Text("\(barCount) time(s)")
                     }
                 }
-                Spacer()
-//                Button {
-//                    stats = Statistics(gameRecord: "")
-//                } label: {
-//                    Text("Reset Game Stats")
-//                        .font(.title2)
-//                        .multilineTextAlignment(.center)
-//                }
+            }
+            Spacer()
+            Button {
+                stats.resetStats()
+            } label: {
+                Text("Reset Game Stats")
+                    .font(.title2)
             }
         }
     }

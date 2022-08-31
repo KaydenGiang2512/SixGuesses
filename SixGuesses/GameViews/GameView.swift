@@ -11,12 +11,13 @@ struct GameView: View {
     @StateObject var game = SixGuesses()
     @State private var showResults = false
     @State private var showStats = false
+//    @AppStorage("GameState") var gameState = ""
     @Environment(\.scenePhase) var scenePhase
     
     var body: some View {
         NavigationView {
             ZStack {
-                Color.blue.opacity(0.5).edgesIgnoringSafeArea(.all)
+                Color.accentColor.opacity(0.5).edgesIgnoringSafeArea(.all)
                 
                 VStack {
                     HStack {
@@ -40,11 +41,16 @@ struct GameView: View {
                     }
                     .padding(.horizontal)
                     Spacer()
-                    Text("Guess the Word!")
-                        .font(.title2)
+                    Text("6 GUESSES")
+                        .font(.system(size: 30))
                         .fontWeight(.bold)
-                        .accessibilityAddTraits(.isHeader)
-                        .foregroundColor(.white)
+                        .foregroundStyle(
+                            LinearGradient(
+                                colors: [.red, .blue, .green, .yellow],
+                                startPoint: .leading,
+                                endPoint: .trailing
+                            )
+                        )
                     BoardView(game: game)
                     KeyboardView(game: game)
                         .padding(5)
@@ -61,7 +67,7 @@ struct GameView: View {
                         Spacer()
                         Button {
                             game.newGame()
-                            playSound(sound: "background-music", type: "mp3", numberOfLoops: -1)
+                            playMusic(sound: "background-music", type: "mp3", numberOfLoops: -1)
                         } label: {
                             Text("New Game")
                                 .fontWeight(.semibold)
@@ -78,6 +84,11 @@ struct GameView: View {
                     // 2
                     if newStatus == .won || newStatus == .lost {
                         // 3
+                        if newStatus == .won {
+                            playSFX(sound: "win-sfx", type: "mp3")
+                        } else if newStatus == .lost {
+                            playSFX(sound: "lose-sfx", type: "mp3")
+                        }
                         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                             showResults = true
                         }
@@ -91,7 +102,7 @@ struct GameView: View {
                 .onChange(of: scenePhase) { newPhase in
                     // 2
                     if newPhase == .active {
-                        if game.status == .new && !game.gameState.isEmpty {
+                        if game.status == .inprogress && !game.gameState.isEmpty {
                             game.loadState()
                         }
                     }

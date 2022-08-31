@@ -6,29 +6,36 @@
 //
 
 import Foundation
+import SwiftUI
 
-struct Statistics {
-    var gameRecord: String
-
+class Statistics: ObservableObject {
+    @AppStorage("GameRecord") var gameRecords = ""
+    
+    init(gameRecord: String) {
+        self.gameRecord = gameRecord
+    }
+    
+    @Published var gameRecord: String
+    
     var gamesPlayed: Int {
         gameRecord.count
     }
-
+    
     var gamesWon: Int {
         gameRecord.filter { $0 != "L" }.count
     }
-
+    
     var percentageWon: Int {
         guard gamesPlayed > 0 else { return 0 }
         return Int((Double(gamesWon) / Double(gamesPlayed) * 100.0).rounded())
     }
-
+    
     var currentWinStreak: Int {
         return gameRecord.reversed().firstIndex(of: "L") ?? gameRecord.count
     }
-
+    
     var maxWinStreak: Int {
-        let games = Array(gameRecord) // gameRecord.map { $0 }
+        let games = Array(gameRecord)
         var maxStreak = 0
         var currentStreak = 0
         for game in games {
@@ -44,7 +51,7 @@ struct Statistics {
         }
         return maxStreak
     }
-
+    
     var winRound: [Int] {
         let win1 = gameRecord.filter { $0 == "1" }.count
         let win2 = gameRecord.filter { $0 == "2" }.count
@@ -52,7 +59,11 @@ struct Statistics {
         let win4 = gameRecord.filter { $0 == "4" }.count
         let win5 = gameRecord.filter { $0 == "5" }.count
         let win6 = gameRecord.filter { $0 == "6" }.count
-
+        
         return [win1, win2, win3, win4, win5, win6]
+    }
+    
+    func resetStats() {
+        gameRecords = ""
     }
 }
