@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct GameView: View {
-    @StateObject var game = SixGuesses()
+    @EnvironmentObject var game: SixGuesses
     @State private var showResults = false
     @State private var showStats = false
-//    @AppStorage("GameState") var gameState = ""
+    @State private var disabledButton = true
     @Environment(\.scenePhase) var scenePhase
+    
+    @AppStorage("GameState") var gameState = ""
+
     
     var body: some View {
         NavigationView {
@@ -45,8 +48,14 @@ struct GameView: View {
                         .font(.system(size: 30))
                         .fontWeight(.bold)
                         .foregroundStyle(
-                            LinearGradient(
+                            game.hardMode
+                            ? LinearGradient(
                                 colors: [.red, .blue, .green, .yellow],
+                                startPoint: .leading,
+                                endPoint: .trailing
+                            )
+                            : LinearGradient(
+                                colors: [.black],
                                 startPoint: .leading,
                                 endPoint: .trailing
                             )
@@ -64,16 +73,27 @@ struct GameView: View {
                                 .accessibilityLabel("Statistics")
                                 .foregroundColor(.white)
                         }
+                        .padding(.trailing)
+                        NavigationLink {
+                            AchievementsView()
+                        } label: {
+                            Image(systemName: "star.circle.fill")
+                                .imageScale(.large)
+                                .accessibilityLabel("Achievements")
+                                .foregroundColor(.white)
+                        }
                         Spacer()
                         Button {
                             game.newGame()
+                            disabledButton = true
                             playMusic(sound: "background-music", type: "mp3", numberOfLoops: -1)
                         } label: {
                             Text("New Game")
                                 .fontWeight(.semibold)
                                 .font(.system(size: 20))
-                                .foregroundColor(.white)
+                                .foregroundColor(disabledButton ? .gray.opacity(0.5) : .white)
                         }
+                        .disabled((game.status == .inprogress || game.status == .new) && disabledButton)
                     }
                     .padding(.horizontal)
                 }
@@ -92,26 +112,27 @@ struct GameView: View {
                         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                             showResults = true
                         }
+                        disabledButton = false
                     }
                 }
                 .frame(alignment: .top)
-                .padding([.bottom], 10)
+                .padding(.bottom, 10)
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationBarHidden(true)
                 // 1
                 .onChange(of: scenePhase) { newPhase in
-                    // 2
-                    if newPhase == .active {
-                        if game.status == .inprogress && !game.gameState.isEmpty {
-                            game.loadState()
-                        }
-                    }
-                    // 3
+                    // Saving game state when the scene phase is either inactive or in background
                     if newPhase == .background || newPhase == .inactive {
                         game.saveState()
                     }
                 }
             }
+        }
+        // Loading the current game state if it's not empty so that users can continue
+        .onAppear {
+            if game.status == .new && !game.gameState.isEmpty {
+                game.loadState()
+        }
         }
     }
 }

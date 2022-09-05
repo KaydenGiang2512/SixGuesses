@@ -9,6 +9,7 @@ import SwiftUI
 
 struct StatisticsView: View {
     @ObservedObject var stats: Statistics
+    
 
     var body: some View {
         VStack(spacing: 15.0) {
@@ -17,16 +18,25 @@ struct StatisticsView: View {
                     .font(.title)
                     .fontWeight(.bold)
                     .padding(.vertical)
-                Text("Games played: \(stats.gamesPlayed) ")
+                Text("Total games played: \(stats.gamesPlayed)")
                     .fontWeight(.semibold)
-                Text("Games won: \(stats.gamesWon)")
+                    .font(.system(size: 20))
+                Spacer()
+                Text("Total games won: \(stats.gamesWon)")
                     .fontWeight(.semibold)
+                    .font(.system(size: 20))
+                Spacer()
                 Text("Winning percentage: \(stats.percentageWon)%")
                     .fontWeight(.semibold)
-                Text("Current Winning Streak: \(stats.currentWinStreak) ")
+                    .font(.system(size: 20))
+                Spacer()
+                Text("Current Winning Streak: \(stats.currentWinStreak)")
                     .fontWeight(.semibold)
+                    .font(.system(size: 20))
+                Spacer()
                 Text("Longest Winning Streak: \(stats.maxWinStreak)")
                     .fontWeight(.semibold)
+                    .font(.system(size: 20))
             }
             Spacer()
             VStack(alignment: .leading) {
@@ -56,7 +66,8 @@ struct StatisticsView: View {
             }
             Spacer()
             Button {
-                stats.resetStats()
+                UserDefaults.standard.removeObject(forKey: "GameRecord")
+                stats.gameRecord = ""
             } label: {
                 Text("Reset Game Stats")
                     .font(.title2)

@@ -21,15 +21,16 @@ class SixGuesses: ObservableObject {
     let maxGuesses = 6
     var dictionary: WordDictionary
     var status: GameState = .initializing {
-      didSet {
-        if status == .lost || status == .won {
-          gameState = ""
+        didSet {
+            if status == .lost || status == .won {
+                gameState = ""
+            }
         }
-      }
     }
     
     @AppStorage("GameRecord") var gameRecord = ""
     @AppStorage("GameState") var gameState = ""
+    @AppStorage("HardMode") var hardMode = false
 
     @Published var targetWord: String
     @Published var currentGuess = 0
@@ -124,8 +125,13 @@ class SixGuesses: ObservableObject {
             if targetWord.contains(letterAtIndex) {
                 // 5
                 if let guessedLetterIndex = targetLettersRemaining.firstIndex(of: Character(letterAtIndex)) {
-                    letterStatus = .notInPosition
-                    targetLettersRemaining.remove(at: guessedLetterIndex)
+                    //Hard Mode condition check
+                    if hardMode {
+                        letterStatus = .notInWord
+                    } else {
+                        letterStatus = .notInPosition
+                        targetLettersRemaining.remove(at: guessedLetterIndex)
+                    }
                 }
             }
             // 6
@@ -137,7 +143,6 @@ class SixGuesses: ObservableObject {
             gameRecord += "\(currentGuess + 1)"
             return
         }
-
         if currentGuess < maxGuesses - 1 {
             guesses.append(WordGuess())
             currentGuess += 1

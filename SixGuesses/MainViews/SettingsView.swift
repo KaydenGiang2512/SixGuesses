@@ -15,6 +15,14 @@ struct SettingsView: View {
     var body: some View {
         NavigationView {
             VStack {
+                Section(footer: Text("When Hard Mode is enabled, only the correctly placed letters will be indicated!")
+                        .foregroundColor(.gray.opacity(0.75))) {
+                    VStack(alignment: .leading) {
+                        Toggle("Hard Mode", isOn: $game.hardMode)
+                        Divider()
+                    }
+                }
+                .padding(.vertical)
                 Text("Toggle App Themes")
                 Picker("Display mode", selection: $csManager.colorScheme) {
                     Text("Light").tag(ColorScheme.light)
@@ -26,6 +34,7 @@ struct SettingsView: View {
             }
             .navigationBarTitle("Game Settings")
             .navigationBarTitleDisplayMode(.inline)
+            .padding(.horizontal)
         }
         .navigationViewStyle(.stack)
     }

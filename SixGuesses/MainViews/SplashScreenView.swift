@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SplashScreenView: View {
     @StateObject var csManager = AppColorScheme()
+    @StateObject var game = SixGuesses()
     @State var isActive: Bool = false
     
     var body: some View {
@@ -16,8 +17,10 @@ struct SplashScreenView: View {
             if self.isActive {
                 GameView()
                     .environmentObject(csManager)
+                    .environmentObject(game)
                     .onAppear {
                         csManager.applyColorScheme()
+                        playMusic(sound: "background-music", type: "mp3", numberOfLoops: -1)
                     }
                     .navigationViewStyle(.stack)
             } else {
@@ -28,7 +31,7 @@ struct SplashScreenView: View {
         }
         .onAppear {
             // 6.
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 // 7.
                 withAnimation {
                     self.isActive = true

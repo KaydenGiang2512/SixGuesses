@@ -9,8 +9,6 @@ import Foundation
 import SwiftUI
 
 class Statistics: ObservableObject {
-    @AppStorage("GameRecord") var gameRecords = ""
-    
     init(gameRecord: String) {
         self.gameRecord = gameRecord
     }
@@ -61,9 +59,5 @@ class Statistics: ObservableObject {
         let win6 = gameRecord.filter { $0 == "6" }.count
         
         return [win1, win2, win3, win4, win5, win6]
-    }
-    
-    func resetStats() {
-        gameRecords = ""
     }
 }

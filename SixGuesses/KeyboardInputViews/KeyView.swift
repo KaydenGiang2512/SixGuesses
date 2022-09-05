@@ -14,7 +14,7 @@ struct KeyView: View {
     var body: some View {
         Button {
             game.addKey(letter: key)
-//            playSFX(sound: "", type: )
+            playSFX(sound: "key-click", type: "mp3")
         } label: {
             switch key {
                 case "<":
