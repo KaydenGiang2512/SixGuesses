@@ -2,7 +2,7 @@
 
 
 <p align="center">
-  <img width="100" src="">
+  <img width="100" src="SixGuesses/Assets.xcassets/AppIcon.appiconset/64.png">
 </p>
 
 <p align="center">"The WORDLE sensation all linguists know and love, remastered on the best tech platform (Apple)"</p>
