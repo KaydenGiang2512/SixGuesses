@@ -235,6 +235,7 @@ class SixGuesses: ObservableObject {
         return .unknown
     }
     
+    // This function assigns a specific color in accordance to the letter status in the previous function
     func colorForKey(key: String) -> Color {
         let status = statusForLetter(letter: key)
 
@@ -251,25 +252,31 @@ class SixGuesses: ObservableObject {
     }
     
     var shareResultText: String? {
-        // 1
+        
+        // This guard clause ensures that the game has to be finished (either won or lost) in order to share results,
+        // and return nil if neither is true 
         guard status == .won || status == .lost else { return nil }
 
-        // 2
+        // Creating constants to store Unicode values of the colored squares, therefore displaying the user's line by line results
         let yellowBox = "\u{1F7E8}"
         let greenBox = "\u{1F7E9}"
         let grayBox = "\u{2B1B}"
 
-        // 3
+        // Creating a summary text variable and using an if statement to alter the text respective to the win/lose status of that round
         var text = "6 GUESSES\n"
         if status == .won {
             text += "Turn \(currentGuess + 1)/\(maxGuesses)\n"
         } else {
             text += "Turn X/\(maxGuesses)\n"
         }
-        // 4
+        
+        // Creating a status string variable, which is initially set to empty, 
+        // then loop through the individual attempts in the guesses array
         var statusString = ""
         for guess in guesses {
-            // 5
+            
+            // Creating an empty string which will be containing the status of each letter in a guess, 
+            // by horizontally stacking the colored boxes representing the status with a small space in between them
             var nextStatus = ""
             for guessedLetter in guess.word {
                 switch guessedLetter.status {
@@ -282,12 +289,17 @@ class SixGuesses: ObservableObject {
                 }
                 nextStatus += " "
             }
-            // 6
+            
+            // Setting the status string variable to the lines of status, separated by a newline
             statusString += nextStatus + "\n"
         }
-        // 7
+        
+        // Concatenating the initial text summary with the status string variable assembled in the previous steps
         return text + statusString
     }
+    
+    // This function saves the current game state when the player temporarily exits the app or clears it from memory,
+    // and prints out the saved state to the console for debugging
     
     func saveState() {
         let guessList = guesses.map { $0.status == .complete ? "\($0.letters)>" : $0.letters }
@@ -296,22 +308,31 @@ class SixGuesses: ObservableObject {
         print("Saving current game state: \(gameState)")
     }
     
+    // This function brings in the saved state in the method above and loads it into the View whenever the player re-enters the app,
+    // under the condition that the game status is not finished (neither won, lost or new)
     func loadState() {
-        // 1
+        
+        // Quick reset of the game by setting the current guess value to 0, clearing the guesses array entirely before 
+        // adding in an empty guess then set the game status to inprogress
         print("Loading game state: \(gameState)")
         currentGuess = 0
         guesses = .init()
         guesses.append(WordGuess())
         status = .inprogress
 
-        // 2
+        // Creating an array to store the saved game state as 2 strings, splitted by the | symbol from the original game state string
         let stateParts = gameState.split(separator: "|")
-        // 3
+        
+        // Setting the target word to the word in the first index of the array (which is the target word in saved state)
         targetWord = String(stateParts[0])
-        // 4
+        
+        // This guard clause ensures that the current game has a second string (indicator of an inprogress game),
+        // then store these extra strings into the guessList constant
         guard stateParts.count > 1 else { return }
         let guessList = String(stateParts[1])
-        // 5
+        
+        // Convert the guessList into an array of characters before performing a for-loop through each of them,
+        // then convert each letter into an individual string before adding that as a key on the game board
         let letters = Array(guessList)
         for letter in letters {
             let newGuess = String(letter)
@@ -320,6 +341,7 @@ class SixGuesses: ObservableObject {
     }
 }
 
+// This extension creates different instances of the game as tests
 extension SixGuesses {
     convenience init(word: String) {
         self.init()
