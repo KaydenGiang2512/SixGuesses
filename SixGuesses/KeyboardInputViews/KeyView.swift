@@ -8,14 +8,22 @@
 import SwiftUI
 
 struct KeyView: View {
+    
+    // Declaring the initial variables
     @ObservedObject var game: SixGuesses
     var key: String
 
     var body: some View {
+        
+        // Making each keyboard key as an indivudal button with its own symbol (letter or special character), 
+        // which also makes a cool clicking sound when activated
         Button {
             game.addKey(letter: key)
             playSFX(sound: "key-click", type: "mp3")
         } label: {
+            
+            // Switch statement to add the appropriate symbols to the regular letter keys,
+            // as well as the special keys (enter button and delete button)
             switch key {
                 case "<":
                     Image(systemName: "delete.backward")
