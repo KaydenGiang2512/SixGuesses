@@ -21,14 +21,20 @@ struct BoardView: View {
 
   var body: some View {
     VStack {
-      // 1
+      
+      // For-each loop to go through all existing guesses in as a binding
       ForEach($game.guesses) { guess in
-        // 2
+                              
+        // Displaying each individual guess via the CurrentGuessView,
+        // by passing in the binding as well as the word length constant
         CurrentGuessView(guess: guess, wordLength: game.wordLength)
       }
-      // 3
+      
+      // Loop through the remaining empty slots (unused guesses) 
       ForEach(0..<unusedGuesses, id: \.self) { _ in
-        // 4
+                                              
+        // Foe each unsued guess, display the empty row also using the CurrentGuessView,
+        // by passing in the blank guess as well as the word length constant
         CurrentGuessView(guess: .constant(WordGuess()), wordLength: game.wordLength)
       }
     }
