@@ -9,10 +9,13 @@ import Foundation
 import SwiftUI
 
 class Statistics: ObservableObject {
+    
+    // Creating a constructor for the game record app storage
     init(gameRecord: String) {
         self.gameRecord = gameRecord
     }
     
+    // Declaring statistical variables to display on the Statistics View
     @Published var gameRecord: String
     
     var gamesPlayed: Int {
