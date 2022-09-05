@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 
+// Creating an enum containing all the possible states of the main gameplay to perform the appropriate logic
 enum GameState {
     case initializing
     case new
@@ -17,6 +18,8 @@ enum GameState {
 }
 
 class SixGuesses: ObservableObject {
+    
+    // Declaring initial game constants and variables
     let wordLength = 5
     let maxGuesses = 6
     var dictionary: WordDictionary
@@ -28,49 +31,60 @@ class SixGuesses: ObservableObject {
         }
     }
     
+    // Declaring the 3 App Storage variables to permanently store game data for later access
     @AppStorage("GameRecord") var gameRecord = ""
     @AppStorage("GameState") var gameState = ""
     @AppStorage("HardMode") var hardMode = false
 
+    // Creating publishable variables to trigger view reload whenever their values are changed inside the core game logic
     @Published var targetWord: String
     @Published var currentGuess = 0
     @Published var guesses: [WordGuess]
 
     init() {
-        // 1
+        
+        // Creating a new instance of the Dictionary object with the constant set as the word length
         dictionary = WordDictionary(length: wordLength)
-        // 2
+        
+        // Creating constants to keep track of the dictionary's total number of words, choosing a random word using a for loop and a random function 
+        // before assigning a variable to store the selected word
         let totalWords = dictionary.words.count
         let randomWord = Int.random(in: 0..<totalWords)
         let word = dictionary.words[randomWord]
-        // 3
+        
+        // Assigning the initial @Published var to the newly created variable containing the word, then print it to the console for debugging
         targetWord = word
         #if DEBUG
         print("selected word: \(word)")
         #endif
-        // 4
+        // Initialize the guesses variable to an empty array to store the player's guess attempts, then setting the status as a new game
         guesses = .init()
         guesses.append(WordGuess())
         status = .new
     }
 
     func addKey(letter: String) {
-        // 1
+        
+        // In the new status, as soon as the player clicks on any key, the game changes to its inprogress state
         if status == .new {
             status = .inprogress
         }
-        // 2
+        
+        // If the game is not in the inprogress state, ignore all user input on the keyboard
         guard status == .inprogress else {
             return
         }
-        // 3
+        
+        // Creating a switch case to handle user input on the letter keys along with the special character keys (delete & enter buttons)
         switch letter {
         case "<":
             deleteLetter()
         case ">":
             checkGuess()
         default:
-            // 4
+            
+            // For each letter, check if the input word that the player guesses is shorter than the allowed word length. 
+            // If so, then append that letter the current guess
             if guesses[currentGuess].word.count < wordLength {
                 let newLetter = GuessedLetter(letter: letter)
                 guesses[currentGuess].word.append(newLetter)
@@ -78,35 +92,48 @@ class SixGuesses: ObservableObject {
         }
     }
 
+    // This function handles events where the player clicks on the character key on the left (delete the most recent letter from right to left)
     func deleteLetter() {
         let currentLetters = guesses[currentGuess].word.count
         guard currentLetters > 0 else { return }
         guesses[currentGuess].word.remove(at: currentLetters - 1)
     }
 
+    // This functoin handles events where the player clicks on the character key on the right (lock in the guess to check)
     func checkGuess() {
-        // 1
+        
+        // A guard clause checking if the current guess satisfies the provided word length of 5 letters.
+        // If not, then return immediately and ignore the player's input
         guard guesses[currentGuess].word.count == wordLength  else { return }
-        // 2
+        
+        // Checking if the word is a valid one or not according to the list of words in the dictionary.
+        // If not, then set the guess status to invalidWord and return immediately
         if !dictionary.isValidWord(guesses[currentGuess].letters) {
             guesses[currentGuess].status = .invalidWord
             return
         }
 
-        // 1
+        // Once the user clicks enter on a guess attempt, set it's status to complete
         guesses[currentGuess].status = .complete
-        // 2
+        
+        // Creating an array containing the letters of the target word (selected by random)
         var targetLettersRemaining = Array(targetWord)
-        // 3
+        
+        // Looping through all the indices of the current guess one by one (each letter)
         for index in guesses[currentGuess].word.indices {
-            // 4
+            
+            // Getting the same index position of a letter in both the target word as well as the current guess to compare them
             let stringIndex = targetWord.index(targetWord.startIndex, offsetBy: index)
             let letterAtIndex = String(targetWord[stringIndex])
-            // 5
+            
+            // An if statement to decide whether a letter in the current guess matches up with a letter in the target word at a specific index 
             if letterAtIndex == guesses[currentGuess].word[index].letter {
-                // 6
+                
+                // If so, then mark the current guess letter's status to inPosition
                 guesses[currentGuess].word[index].status = .inPosition
-                // 7
+                
+                // Once they match, get the first index of the letterAtIndex (after casting it to a Character in the characters array),
+                // before unwrapping it as letterIndex. If the value does exist, remove that letter from the targetLettersRemaining array
                 if let letterIndex =
                     targetLettersRemaining.firstIndex(of: Character(letterAtIndex)) {
                     targetLettersRemaining.remove(at: letterIndex)
@@ -114,27 +141,36 @@ class SixGuesses: ObservableObject {
             }
         }
 
-        // 1
+        // Looping through all the indices of the current guess one by one with the unknown status, 
+        // while filtering out the letters that are already deemed as inPosition
         for index in guesses[currentGuess].word.indices
             .filter({ guesses[currentGuess].word[$0].status == .unknown }) {
-            // 2
+                
+             // Getting the corresponding letter for a position in the current guess based on their index
             let letterAtIndex = guesses[currentGuess].word[index].letter
-            // 3
+                
+            // Set the initial status of the letters to notInWord
             var letterStatus = LetterStatus.notInWord
-            // 4
+                
+            // Checking if the letter appears in any given position of the target word
             if targetWord.contains(letterAtIndex) {
-                // 5
+                
+                // Getting the index position of the letterAtIndex to check if it's present in the target word
                 if let guessedLetterIndex = targetLettersRemaining.firstIndex(of: Character(letterAtIndex)) {
-                    //Hard Mode condition check
+                    
+                    // Hard Mode condition check, where even a letter that is misplaced will not be indicated
                     if hardMode {
                         letterStatus = .notInWord
-                    } else {
+                    } 
+                    
+                    // If Hard Mode is disabled, proceed to set the status of the letter to notInPosition if it appears in the word
+                    else {
                         letterStatus = .notInPosition
                         targetLettersRemaining.remove(at: guessedLetterIndex)
                     }
                 }
             }
-            // 6
+            // Setting the status of the letter according to the value in the letterStatus variable, which is notInWord by default
             guesses[currentGuess].word[index].status = letterStatus
         }
 
@@ -152,6 +188,7 @@ class SixGuesses: ObservableObject {
         }
     }
     
+    // This function when invoked, creates a brand new game instance, refreshing all the initializing variables
     func newGame() {
         let totalWords = dictionary.words.count
         let randomWord = Int.random(in: 0..<totalWords)
@@ -165,23 +202,27 @@ class SixGuesses: ObservableObject {
     }
     
     func statusForLetter(letter: String) -> LetterStatus {
-        // 1
+        
+        // Ensures that either the enter or delete keys will return the letter status of unknown
         if letter == "<" || letter == ">" {
             return .unknown
         }
-        // 2
+        
+        // Only allowing the system to check if the guess is completed
         let finishedGuesses = guesses.filter { $0.status == .complete }
-        // 3
+        
+        // Using the reduce function to set the appropriate status to each letter in the guess using the LetterStatus enum
         let guessedLetters = finishedGuesses.reduce([LetterStatus]()) { partialResult, guess in
-            // 4
             let guessStatuses = guess.word.filter { $0.letter == letter }.map { $0.status }
-            // 5
+                                                                       
+            // Creating a copy of the partialResult since it is immutable, then sending the copy to the next code block
             var currentStatuses = partialResult
             currentStatuses.append(contentsOf: guessStatuses)
             return currentStatuses
         }
 
-        // 6
+        // Checking if the elements in the guessedLetters array contain the corresponding status before returning the same status,
+        // In order of precedence (inPosition -> notInPosition -> notInWord)
         if guessedLetters.contains(.inPosition) {
             return .inPosition
         }
