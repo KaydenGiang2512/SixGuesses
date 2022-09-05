@@ -6,7 +6,8 @@
 //
 
 import UIKit
-
+ 
+// Created a UIWindow extension to control/toggle the color scheme of the entire application
 extension UIWindow {
     static var key: UIWindow? {
         guard let scene = UIApplication.shared.connectedScenes.first,
