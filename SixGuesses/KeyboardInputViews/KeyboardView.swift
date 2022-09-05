@@ -8,10 +8,15 @@
 import SwiftUI
 
 struct KeyboardView: View {
+    
+    //Declaring the initial variables
     @ObservedObject var game: SixGuesses
     let keyboard = "QWERTYUIOP|ASDFGHJKL|<ZXCVBNM>"
 
     var body: some View {
+        
+        // Dividing the keyboard into separate rows based on where the "|" symbol is,
+        // Then assigning each key to the KeyView with a background color
         let lines = keyboard.split(separator: "|")
         VStack {
             ForEach(lines, id: \.self) { line in
