@@ -9,6 +9,8 @@ import SwiftUI
 import AVFoundation
 
 struct ResultView: View {
+    
+    //Declaring the initial variables
     @ObservedObject var game: SixGuesses
     @Environment(\.dismiss) var dismiss
     
@@ -16,6 +18,9 @@ struct ResultView: View {
         NavigationView {
             ZStack {
                 VStack {
+                    
+                    // If the player wins a round this particular congrats message is displayed,
+                    // along with an uplifting music track similar to the victorious state
                     if game.status == .won {
                         Text("You got it!")
                             .font(.title)
@@ -29,7 +34,11 @@ struct ResultView: View {
                         Image("well-done")
                             .resizable()
                             .frame(width: 300, height: 200)
-                    } else {
+                    } 
+                    
+                    // Otherwise, a regretful message is displayed instead,
+                    // along with a dreary music track similar to the failure state
+                    else {
                         Text("You failed to guess the word in \(game.maxGuesses) attempts.")
                             .font(.title)
                             .fontWeight(.bold)
@@ -42,15 +51,23 @@ struct ResultView: View {
                             .resizable()
                             .frame(width: 300, height: 200)
                     }
+                    
+                    // In either case, the final answer is revealed to the player
                     Text("The word was \(game.targetWord).")
                         .font(.title2)
                         .fontWeight(.semibold)
                         .padding()
+                    
+                    // Extra feature: A customized Google query containing the definition of the target word,
+                    // redirecting them to an external website for the purpose of education
                     Link(destination: URL(string: "https://www.google.com/search?q=\(game.targetWord.lowercased())+meaning")!, label: {
                         Text("What does this word mean?")
                             .underline()
                     })
                     Spacer()
+                    
+                    // Extra feature: This vertical stack contains the "share your results" option, 
+                    // allowing th player to send their round status to their friends
                     VStack {
                         Text("Share your results with friends!")
                             .font(.title2)
