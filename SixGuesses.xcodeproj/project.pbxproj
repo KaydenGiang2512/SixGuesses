@@ -34,6 +34,7 @@
 		8BB9B81128C5B55B00C25ECA /* key-click.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8BB9B81028C5B55B00C25ECA /* key-click.mp3 */; };
 		8BB9B81328C5B63900C25ECA /* lose-sfx.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8BB9B81228C5B63900C25ECA /* lose-sfx.mp3 */; };
 		8BB9B81528C5DCDB00C25ECA /* AchievementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB9B81428C5DCDB00C25ECA /* AchievementsView.swift */; };
+		8BB9B81928C5E4F900C25ECA /* AchievementItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB9B81828C5E4F900C25ECA /* AchievementItemView.swift */; };
 		8BBE813528BF5EE000A2CE21 /* win-sfx.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8BBE813428BF5EE000A2CE21 /* win-sfx.mp3 */; };
 		8BC2922828BF1758006CE26D /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC2922728BF1758006CE26D /* SplashScreenView.swift */; };
 		8BC5D58728AE0B1D00649C46 /* SixGuessesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC5D58628AE0B1D00649C46 /* SixGuessesApp.swift */; };
@@ -71,6 +72,7 @@
 		8BB9B81028C5B55B00C25ECA /* key-click.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "key-click.mp3"; path = "../../../../Downloads/key-click.mp3"; sourceTree = "<group>"; };
 		8BB9B81228C5B63900C25ECA /* lose-sfx.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "lose-sfx.mp3"; path = "../../../../Downloads/lose-sfx.mp3"; sourceTree = "<group>"; };
 		8BB9B81428C5DCDB00C25ECA /* AchievementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsView.swift; sourceTree = "<group>"; };
+		8BB9B81828C5E4F900C25ECA /* AchievementItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementItemView.swift; sourceTree = "<group>"; };
 		8BBE813428BF5EE000A2CE21 /* win-sfx.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "win-sfx.mp3"; path = "../../../../Downloads/win-sfx.mp3"; sourceTree = "<group>"; };
 		8BC2922728BF1758006CE26D /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		8BC5D58328AE0B1D00649C46 /* SixGuesses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SixGuesses.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,6 +161,7 @@
 				8B80AB4328B89D7000A1DE1F /* SettingsView.swift */,
 				8BC2922728BF1758006CE26D /* SplashScreenView.swift */,
 				8BB9B81428C5DCDB00C25ECA /* AchievementsView.swift */,
+				8BB9B81828C5E4F900C25ECA /* AchievementItemView.swift */,
 			);
 			path = MainViews;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				8B93116828B74715009F6650 /* KeyView.swift in Sources */,
 				8BA867BC28B9DB2000D0A272 /* AppColorScheme.swift in Sources */,
 				8B80AB4428B89D7000A1DE1F /* SettingsView.swift in Sources */,
+				8BB9B81928C5E4F900C25ECA /* AchievementItemView.swift in Sources */,
 				8B82D48228BC934F008F56B0 /* ActivitySheetView.swift in Sources */,
 				8B03CEBF28B75DA800B262D4 /* StatisticsView.swift in Sources */,
 				8B93116A28B7478C009F6650 /* SixGuesses.swift in Sources */,
