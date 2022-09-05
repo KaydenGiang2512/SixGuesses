@@ -7,9 +7,12 @@
 
 import AVFoundation
 
+// Declaring the initial variables
 var audioPlayer: AVAudioPlayer?
 var musicPlayer: AVAudioPlayer?
 
+// This function will try to find the music files, 
+// then plays the song on command through AVAudioPlayer's built-in play method 
 func playMusic(sound: String, type: String, numberOfLoops: Int) {
     if let filePath = Bundle.main.path(forResource: sound, ofType: type) {
         do {
@@ -22,6 +25,8 @@ func playMusic(sound: String, type: String, numberOfLoops: Int) {
     }
 }
 
+// This function will try to find the music files, 
+// then stops the song on command through AVAudioPlayer's built-in stop method 
 func stopMusic(sound: String, type: String) {
     if let filePath = Bundle.main.path(forResource: sound, ofType: type) {
         do {
@@ -33,6 +38,8 @@ func stopMusic(sound: String, type: String) {
     }
 }
 
+// This function will try to find the sound effect files, 
+// then plays the sound on command through AVAudioPlayer's built-in play method 
 func playSFX(sound: String, type: String) {
     if let filePath = Bundle.main.path(forResource: sound, ofType: type) {
         do {
