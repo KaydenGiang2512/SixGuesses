@@ -8,10 +8,14 @@
 import SwiftUI
 
 struct InstructionsView: View {
+    
+    // Declaring the dismiss environment variable as our "x" button
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
         NavigationView {
+            
+            // Adding a multiline text paragraph and aligns it to the left edge of the view
             VStack(alignment: .leading) {
                 Text(
 """
@@ -27,6 +31,8 @@ After each guess, the color of the tiles will change to indicate your current st
                 Text("**Examples**:")
                     .font(.system(size: 20))
                     .underline()
+                
+                // Adding illustrations of how to play the SixGuesses game
                 VStack(alignment: .leading) {
                     Image("Weary")
                         .resizable()
