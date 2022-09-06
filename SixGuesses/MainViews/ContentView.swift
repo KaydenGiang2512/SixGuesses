@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    // Declaring the color scheme variable as soon as the application loads
     @StateObject var csManager = AppColorScheme()
     
     var body: some View {
