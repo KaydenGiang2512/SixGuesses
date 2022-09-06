@@ -10,6 +10,7 @@ import SwiftUI
 struct ActivitySheetView: UIViewControllerRepresentable {
     let activityItems: [Any]
 
+    // Creating an instance of SwiftUI's UIViewController class 
     func makeUIViewController(context: Context) -> UIActivityViewController {
         let controller = UIActivityViewController(
             activityItems: activityItems,
