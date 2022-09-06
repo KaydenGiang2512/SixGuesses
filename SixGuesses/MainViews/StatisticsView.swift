@@ -9,7 +9,7 @@ import SwiftUI
 
 struct StatisticsView: View {
     @ObservedObject var stats: Statistics
-    
+    @Environment(\.scenePhase) var scenePhase
 
     var body: some View {
         VStack(spacing: 15.0) {
@@ -21,22 +21,33 @@ struct StatisticsView: View {
                 Text("Total games played: \(stats.gamesPlayed)")
                     .fontWeight(.semibold)
                     .font(.system(size: 20))
-                Spacer()
+                    .padding(.vertical)
+                    .frame(width: 350)
+                    .border(.foreground)
                 Text("Total games won: \(stats.gamesWon)")
                     .fontWeight(.semibold)
                     .font(.system(size: 20))
-                Spacer()
+                    .padding(.vertical)
+                    .frame(width: 350)
+                    .border(.foreground)
                 Text("Winning percentage: \(stats.percentageWon)%")
                     .fontWeight(.semibold)
                     .font(.system(size: 20))
-                Spacer()
+                    .padding(.vertical)
+                    .frame(width: 350)
+                    .border(.foreground)
                 Text("Current Winning Streak: \(stats.currentWinStreak)")
                     .fontWeight(.semibold)
                     .font(.system(size: 20))
-                Spacer()
+                    .padding(.vertical)
+                    .frame(width: 350)
+                    .border(.foreground)
                 Text("Longest Winning Streak: \(stats.maxWinStreak)")
                     .fontWeight(.semibold)
                     .font(.system(size: 20))
+                    .padding(.vertical)
+                    .frame(width: 350)
+                    .border(.foreground)
             }
             Spacer()
             VStack(alignment: .leading) {
@@ -66,8 +77,8 @@ struct StatisticsView: View {
             }
             Spacer()
             Button {
-                UserDefaults.standard.removeObject(forKey: "GameRecord")
                 stats.gameRecord = ""
+                UserDefaults.standard.removeObject(forKey: "GameRecord")
             } label: {
                 Text("Reset Game Stats")
                     .font(.title2)

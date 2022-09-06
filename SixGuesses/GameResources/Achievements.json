@@ -1,0 +1,193 @@
+[
+    {
+        "type": "games",
+        "title": "SIXGUESSES Novice",
+        "description": "complete 1 game in SixGuesses",
+        "level": 0,
+        "requirement": 1
+    },
+    
+    {
+        "type": "games",
+        "title": "SIXGUESSES Amateur",
+        "description": "complete 10 games in SixGuesses",
+        "level": 1,
+        "requirement": 10
+    },
+    
+    {
+        "type": "games",
+        "title": "SIXGUESSES Intermediate",
+        "description": "complete 25 games in SixGuesses",
+        "level": 2,
+        "requirement": 25
+    },
+    
+    {
+        "type": "games",
+        "title": "SIXGUESSES Advanced",
+        "description": "complete 50 games in SixGuesses",
+        "level": 3,
+        "requirement": 50
+    },
+    
+    {
+        "type": "games",
+        "title": "SIXGUESSES Master",
+        "description": "complete 75 games in SixGuesses",
+        "level": 4,
+        "requirement": 75
+    },
+    
+    {
+        "type": "games",
+        "title": "SIXGUESSES Grandmaster",
+        "description": "complete 100 games in SixGuesses",
+        "level": 5,
+        "requirement": 100
+    },
+    
+    {
+        "type": "wins",
+        "title": "SIXGUESSES Victory I",
+        "description": "win 1 game in SixGuesses",
+        "level": 0,
+        "requirement": 1
+    },
+    
+    {
+        "type": "wins",
+        "title": "SIXGUESSES Victory II",
+        "description": "win 5 games in SixGuesses",
+        "level": 1,
+        "requirement": 5
+    },
+    
+    {
+        "type": "wins",
+        "title": "SIXGUESSES Victory III",
+        "description": "win 15 games in SixGuesses",
+        "level": 2,
+        "requirement": 15
+    },
+    
+    {
+        "type": "wins",
+        "title": "SIXGUESSES Victory IV",
+        "description": "win 30 games in SixGuesses",
+        "level": 3,
+        "requirement": 30
+    },
+    
+    {
+        "type": "wins",
+        "title": "SIXGUESSES Victory V",
+        "description": "win 50 games in SixGuesses",
+        "level": 4,
+        "requirement": 50
+    },
+    
+    {
+        "type": "wins",
+        "title": "SIXGUESSES Victory VI",
+        "description": "win 75 games in SixGuesses",
+        "level": 5,
+        "requirement": 75
+    },
+    
+    {
+        "type": "streak",
+        "title": "SIXGUESSES Hot Streak I",
+        "description": "achieve a win streak of 3 in SixGuesses",
+        "level": 0,
+        "requirement": 3
+    },
+    
+    {
+        "type": "streak",
+        "title": "SIXGUESSES Hot Streak II",
+        "description": "achieve a win streak of 5 in SixGuesses",
+        "level": 1,
+        "requirement": 5
+    },
+    
+    {
+        "type": "streak",
+        "title": "SIXGUESSES Hot Streak III",
+        "description": "achieve a win streak of 10 in SixGuesses",
+        "level": 2,
+        "requirement": 10
+    },
+    
+    {
+        "type": "streak",
+        "title": "SIXGUESSES Hot Streak IV",
+        "description": "achieve a win streak of 15 in SixGuesses",
+        "level": 3,
+        "requirement": 15
+    },
+    
+    {
+        "type": "streak",
+        "title": "SIXGUESSES Hot Streak V",
+        "description": "achieve a win streak of 25 in SixGuesses",
+        "level": 4,
+        "requirement": 25
+    },
+    
+    {
+        "type": "streak",
+        "title": "SIXGUESSES Hot Streak VI",
+        "description": "achieve a win streak of 50 in SixGuesses",
+        "level": 5,
+        "requirement": 50
+    },
+    
+    {
+        "type": "attempt",
+        "title": "SIXGUESSES Luck or Skill I",
+        "description": "beat a SixGuesses round on your 6th try",
+        "level": 0,
+        "requirement": 6
+    },
+    
+    {
+        "type": "attempt",
+        "title": "SIXGUESSES Luck or Skill II",
+        "description": "beat a SixGuesses round on your 5th try",
+        "level": 1,
+        "requirement": 5
+    },
+    
+    {
+        "type": "attempt",
+        "title": "SIXGUESSES Luck or Skill III",
+        "description": "beat a SixGuesses round on your 4th try",
+        "level": 2,
+        "requirement": 4
+    },
+    
+    {
+        "type": "attempt",
+        "title": "SIXGUESSES: Luck or Skill IV",
+        "description": "beat a SixGuesses round on your 3rd try",
+        "level": 3,
+        "requirement": 3
+    },
+    
+    {
+        "type": "attempt",
+        "title": "SIXGUESSES Luck or Skill V",
+        "description": "beat a SixGuesses round on your 2nd try",
+        "level": 4,
+        "requirement": 2
+    },
+    
+    {
+        "type": "attempt",
+        "title": "SIXGUESSES Luck or Skill VI",
+        "description": "beat a SixGuesses round on your 1st try",
+        "level": 5,
+        "requirement": 1
+    }
+]

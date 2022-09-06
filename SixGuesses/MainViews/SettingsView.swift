@@ -27,7 +27,7 @@ struct SettingsView: View {
                         Divider()
                     }
                 }
-                .padding(.vertical)
+                .padding(.bottom)
                 
                 // Creating a picker element with 3 options to toggle between light mode,
                 // dark mode or based on the default system preferences

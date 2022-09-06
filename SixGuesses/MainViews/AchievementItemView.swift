@@ -8,13 +8,41 @@
 import SwiftUI
 
 struct AchievementItemView: View {
+    @State var achievement: Achievement
+    @State var isAchieved: Bool
+    let colorList = [Color.teal, Color.blue, Color.green, Color.yellow, Color.orange, Color.red]
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            VStack {
+                Text(achievement.title)
+                    .font(.title3)
+                    .fontWeight(.semibold)
+                    .padding(.bottom)
+                Text(achievement.description)
+                    .font(.subheadline)
+            }
+        }
+        .frame(width: 350)
+        .padding(.all)
+        .background(
+            RoundedRectangle(cornerRadius: 10)
+                .fill(colorList[achievement.level])
+                .opacity(0.5)
+        )
+        .overlay(
+            RoundedRectangle(cornerRadius: 10)
+                .fill(.gray)
+                .opacity(isAchieved ? 0 : 0.75)
+        )
     }
 }
 
 struct AchievementItemView_Previews: PreviewProvider {
     static var previews: some View {
-        AchievementItemView()
+        VStack {
+            AchievementItemView(achievement: achievementsList[0], isAchieved: true)
+            AchievementItemView(achievement: achievementsList[1], isAchieved: false)
+        }
     }
 }

@@ -16,7 +16,7 @@ class Statistics: ObservableObject {
     }
     
     // Declaring statistical variables to display on the Statistics View,
-    // and to reuse later on in the leaderboard function
+    // and to reuse later on in the achievements function (showing achievements)
     @Published var gameRecord: String
     
     var gamesPlayed: Int {

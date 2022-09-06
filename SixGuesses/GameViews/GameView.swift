@@ -18,7 +18,6 @@ struct GameView: View {
     
     // Declaring the AppStorage variable game state to save/load current state
     @AppStorage("GameState") var gameState = ""
-
     
     var body: some View {
         NavigationView {
@@ -40,6 +39,24 @@ struct GameView: View {
                         }
                         Spacer()
                         NavigationLink {
+                            StatisticsView(stats: Statistics(gameRecord: game.gameRecord))
+                        } label: {
+                            Image(systemName: "chart.bar.fill")
+                                .imageScale(.large)
+                                .accessibilityLabel("Statistics")
+                                .foregroundColor(.white)
+                        }
+                        Spacer()
+                        NavigationLink {
+                            AchievementsView(stats: Statistics(gameRecord: game.gameRecord))
+                        } label: {
+                            Image(systemName: "star.circle.fill")
+                                .imageScale(.large)
+                                .accessibilityLabel("Achievements")
+                                .foregroundColor(.white)
+                        }
+                        Spacer()
+                        NavigationLink {
                             InstructionsView()
                         } label: {
                             Image(systemName: "questionmark.circle.fill")
@@ -48,7 +65,7 @@ struct GameView: View {
                                 .foregroundColor(.white)
                         }
                     }
-                    .padding(.horizontal)
+                    .padding(.all)
                     Spacer()
                     
                     // This section contains the main game view
@@ -58,16 +75,18 @@ struct GameView: View {
                         .foregroundStyle(
                             game.hardMode
                             ? LinearGradient(
-                                colors: [.red, .blue, .green, .yellow],
+                                colors: [.red],
                                 startPoint: .leading,
                                 endPoint: .trailing
                             )
                             : LinearGradient(
-                                colors: [.black],
+                                colors: [.orange, .blue, .green, .yellow],
                                 startPoint: .leading,
                                 endPoint: .trailing
                             )
                         )
+                        .padding(.all)
+                        .border(.foreground)
                     BoardView(game: game)
                     KeyboardView(game: game)
                         .padding(5)
@@ -76,23 +95,6 @@ struct GameView: View {
                     // This horizontal stack is the bottom action bar of this application,
                     // where the player can access the settings along with a "New Game" button
                     HStack {
-                        NavigationLink {
-                            StatisticsView(stats: Statistics(gameRecord: game.gameRecord))
-                        } label: {
-                            Image(systemName: "chart.bar.fill")
-                                .imageScale(.large)
-                                .accessibilityLabel("Statistics")
-                                .foregroundColor(.white)
-                        }
-                        .padding(.trailing)
-                        NavigationLink {
-                            AchievementsView()
-                        } label: {
-                            Image(systemName: "star.circle.fill")
-                                .imageScale(.large)
-                                .accessibilityLabel("Achievements")
-                                .foregroundColor(.white)
-                        }
                         Spacer()
                         Button {
                             game.newGame()
@@ -102,7 +104,7 @@ struct GameView: View {
                             Text("New Game")
                                 .fontWeight(.semibold)
                                 .font(.system(size: 20))
-                                .foregroundColor(disabledButton ? .gray.opacity(0.5) : .white)
+                                .foregroundColor(disabledButton ? .gray.opacity(0.75) : .white)
                         }
                         .disabled((game.status == .inprogress || game.status == .new) && disabledButton)
                     }
