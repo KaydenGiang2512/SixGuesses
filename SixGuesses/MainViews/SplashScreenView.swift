@@ -8,12 +8,17 @@
 import SwiftUI
 
 struct SplashScreenView: View {
+    
+    // Declaring the initial variables
     @StateObject var csManager = AppColorScheme()
     @StateObject var game = SixGuesses()
     @State var isActive: Bool = false
     
     var body: some View {
         ZStack {
+            
+            // This if statement checks if the Splash Screen is already active in the application,
+            // if so, then go straight to the main Game View immediately 
             if self.isActive {
                 GameView()
                     .environmentObject(csManager)
@@ -30,7 +35,8 @@ struct SplashScreenView: View {
             }
         }
         .onAppear {
-            // 6.
+            // On the appearance of the Splash Screen, create a 2-second delay period,
+            // in which the Splash Screen will be shown before setting the boolean value to true
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 // 7.
                 withAnimation {
