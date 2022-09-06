@@ -8,11 +8,16 @@
 import SwiftUI
 
 struct ShowResultView: View {
+    
+    // Declaring the initial variables
     @ObservedObject var game: SixGuesses
     @State var showShare = false
     
     var body: some View {
         Group {
+            
+            // Showing the summary text for the player to see and interact with,
+            // via a standard share button below
             if let text = game.shareResultText {
                 Text(text)
                     .foregroundColor(Color.green)
@@ -31,6 +36,9 @@ struct ShowResultView: View {
         }
         .font(.title3)
         .multilineTextAlignment(.center)
+        
+        // Checking for the boolean value showShare,
+        // In the case that it is true, display the share sheet to the player
         .sheet(isPresented: $showShare) {
             let text = game.shareResultText ?? ""
             ActivitySheetView(activityItems: [text])
