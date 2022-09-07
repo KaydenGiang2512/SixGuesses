@@ -31,11 +31,11 @@
 
 <table align="center">
   <tr>
-     <td>6 Guesses App with classic game functionalities, adjustable settings and a definition search query available for all the words available in the database</td>
+     <td>6 Guesses App with classic game functionalities, adjustable in-game settings, viewable statistics & achievement badges and a definition search query available for all the words available in the database</td>
   </tr>
   <tr>
     <td align="center">
-        <img src="?raw=true" width="375">
+        <img src="https://github.com/KaydenGiang2512/SixGuesses/blob/main/ViewScreenshots/MenuView.gif?raw=true" width="375">
     </td>
    </tr>
  </table>
