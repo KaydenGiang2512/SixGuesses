@@ -33,7 +33,8 @@
   <img src="ViewScreenshots/ResultView (Lost).png" width="250" > 
   <img src="ViewScreenshots/ResultView (Hard Won).png" width="250" >
   <img src="ViewScreenshots/ResultView (Hard Lost).png" width="250" >
-  <img src="ViewScreenshots/ShareResultView.png" width="250" > 
+  <img src="ViewScreenshots/ShareResultView.png" width="250" >
+  <img src="ViewScreenshots/DefinitionView.png" width="250" >
 </p>
 
 ## 🔮 Live Demo (GIF Animation)
@@ -44,7 +45,7 @@
   </tr>
   <tr>
     <td align="center">
-        <img src="https://github.com/KaydenGiang2512/SixGuesses/blob/main/ViewScreenshots/MenuView.gif?raw=true" width="375">
+        <img src="https://github.com/KaydenGiang2512/SixGuesses/blob/main/ViewScreenshots/MenuBarItems.gif?raw=true" width="375">
     </td>
    </tr>
   <tr>
