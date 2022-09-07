@@ -38,6 +38,26 @@
         <img src="https://github.com/KaydenGiang2512/SixGuesses/blob/main/ViewScreenshots/MenuView.gif?raw=true" width="375">
     </td>
    </tr>
+  <tr>
+    <td align="center">
+        <img src="https://github.com/KaydenGiang2512/SixGuesses/blob/main/ViewScreenshots/BasicGameWin.gif?raw=true" width="375">
+    </td>
+   </tr>
+  <tr>
+    <td align="center">
+        <img src="https://github.com/KaydenGiang2512/SixGuesses/blob/main/ViewScreenshots/BasicGameLose.gif?raw=true" width="375">
+    </td>
+   </tr>
+  <tr>
+    <td align="center">
+        <img src="https://github.com/KaydenGiang2512/SixGuesses/blob/main/ViewScreenshots/HardGameWin.gif?raw=true" width="375">
+    </td>
+   </tr>
+  <tr>
+    <td align="center">
+        <img src="https://github.com/KaydenGiang2512/SixGuesses/blob/main/ViewScreenshots/HardGameLose.gif?raw=true" width="375">
+    </td>
+   </tr>
  </table>
 
 ## 🔧 Build Information
