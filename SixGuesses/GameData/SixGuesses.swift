@@ -263,7 +263,7 @@ class SixGuesses: ObservableObject {
         let grayBox = "\u{2B1B}"
 
         // Creating a summary text variable and using an if statement to alter the text respective to the win/lose status of that round
-        var text = hardMode ? "6 GUESSES (HARD)\n"  : "6 GUESSES\n"
+        var text = hardMode ? "6 GUESSES (HARD)\n" : "6 GUESSES\n"
         if status == .won {
             text += "Turn \(currentGuess + 1)/\(maxGuesses)\n"
         } else {
