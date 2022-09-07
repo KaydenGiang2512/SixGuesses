@@ -9,20 +9,20 @@ import SwiftUI
 
 struct EmptyView: View {
   
-  // Declaring the initial variable
-  var size: Double
+    // Declaring the initial variable
+    var size: Double
 
-  var body: some View {
+    var body: some View {
     
-    // Creating a rounded rectangle shape, which will become the box for each letter
-    RoundedRectangle(cornerRadius: size / 5.0)
-      .stroke(Color(UIColor.label))
-      .frame(width: size, height: size)
-  }
+        // Creating a rounded rectangle shape, which will become the box for each letter
+        RoundedRectangle(cornerRadius: size / 5.0)
+            .stroke(Color(UIColor.label))
+            .frame(width: size, height: size)
+    }
 }
 
 struct EmptyView_Previews: PreviewProvider {
-  static var previews: some View {
-    EmptyView(size: 50.0)
-  }
+    static var previews: some View {
+        EmptyView(size: 50.0)
+    }
 }

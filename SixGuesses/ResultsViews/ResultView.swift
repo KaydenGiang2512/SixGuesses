@@ -22,7 +22,7 @@ struct ResultView: View {
                     // If the player wins a round this particular congrats message is displayed,
                     // along with an uplifting music track similar to the victorious state
                     if game.status == .won {
-                        Text("You got it!")
+                        Text(game.hardMode ? "You won on Hard Mode!" : "You guessed the word!")
                             .font(.title)
                             .fontWeight(.bold)
                             .foregroundColor(.green)
@@ -39,7 +39,7 @@ struct ResultView: View {
                     // Otherwise, a regretful message is displayed instead,
                     // along with a dreary music track similar to the failure state
                     else {
-                        Text("You failed to guess the word in \(game.maxGuesses) attempts.")
+                        Text(game.hardMode ? "You lost on Hard Mode!" : "You failed to guess the word in \(game.maxGuesses) attempts.")
                             .font(.title)
                             .fontWeight(.bold)
                             .foregroundColor(.red)

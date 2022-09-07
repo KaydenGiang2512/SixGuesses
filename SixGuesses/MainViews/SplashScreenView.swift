@@ -38,7 +38,8 @@ struct SplashScreenView: View {
             // On the appearance of the Splash Screen, create a 2-second delay period,
             // in which the Splash Screen will be shown before setting the boolean value to true
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                // 7.
+                // After the animation is complete, set the active boolean variable to true,
+                // then redirect the player to the main game view
                 withAnimation {
                     self.isActive = true
                 }

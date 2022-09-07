@@ -24,5 +24,5 @@ func decodeJsonFromJsonFile(jsonFileName: String) -> [Achievement] {
     } else {
         fatalError("Failed to load the \(jsonFileName) file")
     }
-    return [ ] as [Achievement]
+    return [] as [Achievement]
 }
