@@ -86,7 +86,6 @@ struct GameView: View {
                             )
                         )
                         .padding(.all)
-                        .border(.foreground)
                     BoardView(game: game)
                     KeyboardView(game: game)
                         .padding(5)
