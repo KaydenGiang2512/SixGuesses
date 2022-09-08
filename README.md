@@ -27,7 +27,7 @@
   <img src="ViewScreenshots/GameView.png" width="250" > 
   <img src="ViewScreenshots/SettingsView.png" width="250" > 
   <img src="ViewScreenshots/StatisticsView.png" width="250" > 
-  <img src="ViewScreenshots/" width="250" >
+  <img src="ViewScreenshots/AchievementsView.png" width="250" >
   <img src="ViewScreenshots/InstructionsView.png" width="250" >
   <img src="ViewScreenshots/ResultView (Won).png" width="250" > 
   <img src="ViewScreenshots/ResultView (Lost).png" width="250" > 
