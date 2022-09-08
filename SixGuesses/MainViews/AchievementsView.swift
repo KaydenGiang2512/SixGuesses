@@ -25,6 +25,28 @@ struct AchievementsView: View {
             // Using a for-each loop to read through and display each achievement item,
             // along with their corresponding statuses (locked or unlocked)
             VStack (spacing: 20) {
+                HStack {
+                    Circle()
+                        .fill(.white)
+                        .frame(width: 100, height: 100)
+                        .overlay(
+                            Image("thinking-man")
+                                .resizable()
+                                .frame(width: 90, height: 90)
+                        )
+                    Spacer()
+                    Text("6 GUESSES")
+                        .font(.system(size: 40))
+                        .fontWeight(.bold)
+                        .foregroundStyle(
+                            LinearGradient(
+                                colors: [.orange, .blue, .green, .yellow],
+                                startPoint: .leading,
+                                endPoint: .trailing
+                            )
+                        )
+                }
+                .padding(.horizontal, 40)
                 RoundedRectangle(cornerRadius: 20)
                     .stroke(lineWidth: 5)
                     .padding()
