@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		8B03CEBF28B75DA800B262D4 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B03CEBE28B75DA800B262D4 /* StatisticsView.swift */; };
 		8B0DAE0F28B8831F00FC9950 /* SoundProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0DAE0E28B8831F00FC9950 /* SoundProcessor.swift */; };
+		8B42528628C9C00B00B6FBE6 /* MenuBarItems.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8B42528528C9C00B00B6FBE6 /* MenuBarItems.gif */; };
+		8B42528828C9C06600B6FBE6 /* GameView.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B42528728C9C06600B6FBE6 /* GameView.png */; };
 		8B80AB4228B895D900A1DE1F /* InstructionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B80AB4128B895D900A1DE1F /* InstructionsView.swift */; };
 		8B80AB4428B89D7000A1DE1F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B80AB4328B89D7000A1DE1F /* SettingsView.swift */; };
 		8B82D48028BC8BBB008F56B0 /* ShowResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B82D47F28BC8BBA008F56B0 /* ShowResultView.swift */; };
@@ -50,7 +52,6 @@
 		8BD7E5EC28C88C6700AA0F11 /* SplashScreenView.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BD7E5E128C88C6700AA0F11 /* SplashScreenView.png */; };
 		8BD7E5ED28C88C6700AA0F11 /* ShareResultView.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BD7E5E228C88C6700AA0F11 /* ShareResultView.png */; };
 		8BD7E5EE28C88C6700AA0F11 /* StatisticsView.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BD7E5E328C88C6700AA0F11 /* StatisticsView.png */; };
-		8BD7E5EF28C88C6700AA0F11 /* GameView.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BD7E5E428C88C6700AA0F11 /* GameView.png */; };
 		8BD7E5F028C88C6700AA0F11 /* ResultView (Hard Won).png in Resources */ = {isa = PBXBuildFile; fileRef = 8BD7E5E528C88C6700AA0F11 /* ResultView (Hard Won).png */; };
 		8BD7E5F128C88C6700AA0F11 /* InstructionsView.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BD7E5E628C88C6700AA0F11 /* InstructionsView.png */; };
 		8BD7E5F228C88C6700AA0F11 /* AchievementsView.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BD7E5E728C88C6700AA0F11 /* AchievementsView.png */; };
@@ -60,12 +61,13 @@
 		8BD7E5F828C88E5900AA0F11 /* BasicGameLose.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8BD7E5F728C88E5900AA0F11 /* BasicGameLose.gif */; };
 		8BD7E5FA28C88FF100AA0F11 /* HardGameWin.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8BD7E5F928C88FF100AA0F11 /* HardGameWin.gif */; };
 		8BD7E5FC28C8906B00AA0F11 /* HardGameLose.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8BD7E5FB28C8906B00AA0F11 /* HardGameLose.gif */; };
-		8BD7E5FE28C890CB00AA0F11 /* MenuView.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8BD7E5FD28C890CB00AA0F11 /* MenuView.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8B03CEBE28B75DA800B262D4 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
 		8B0DAE0E28B8831F00FC9950 /* SoundProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundProcessor.swift; sourceTree = "<group>"; };
+		8B42528528C9C00B00B6FBE6 /* MenuBarItems.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = MenuBarItems.gif; sourceTree = "<group>"; };
+		8B42528728C9C06600B6FBE6 /* GameView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GameView.png; sourceTree = "<group>"; };
 		8B80AB4128B895D900A1DE1F /* InstructionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsView.swift; sourceTree = "<group>"; };
 		8B80AB4328B89D7000A1DE1F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		8B82D47F28BC8BBA008F56B0 /* ShowResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowResultView.swift; sourceTree = "<group>"; };
@@ -108,7 +110,6 @@
 		8BD7E5E128C88C6700AA0F11 /* SplashScreenView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SplashScreenView.png; sourceTree = "<group>"; };
 		8BD7E5E228C88C6700AA0F11 /* ShareResultView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ShareResultView.png; sourceTree = "<group>"; };
 		8BD7E5E328C88C6700AA0F11 /* StatisticsView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StatisticsView.png; sourceTree = "<group>"; };
-		8BD7E5E428C88C6700AA0F11 /* GameView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GameView.png; sourceTree = "<group>"; };
 		8BD7E5E528C88C6700AA0F11 /* ResultView (Hard Won).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ResultView (Hard Won).png"; sourceTree = "<group>"; };
 		8BD7E5E628C88C6700AA0F11 /* InstructionsView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = InstructionsView.png; sourceTree = "<group>"; };
 		8BD7E5E728C88C6700AA0F11 /* AchievementsView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AchievementsView.png; sourceTree = "<group>"; };
@@ -118,7 +119,6 @@
 		8BD7E5F728C88E5900AA0F11 /* BasicGameLose.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = BasicGameLose.gif; sourceTree = "<group>"; };
 		8BD7E5F928C88FF100AA0F11 /* HardGameWin.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = HardGameWin.gif; sourceTree = "<group>"; };
 		8BD7E5FB28C8906B00AA0F11 /* HardGameLose.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = HardGameLose.gif; sourceTree = "<group>"; };
-		8BD7E5FD28C890CB00AA0F11 /* MenuView.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = MenuView.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,13 +269,13 @@
 		8BD7E5DE28C88B7700AA0F11 /* ViewScreenshots */ = {
 			isa = PBXGroup;
 			children = (
-				8BD7E5FD28C890CB00AA0F11 /* MenuView.gif */,
+				8B42528728C9C06600B6FBE6 /* GameView.png */,
+				8B42528528C9C00B00B6FBE6 /* MenuBarItems.gif */,
 				8BD7E5FB28C8906B00AA0F11 /* HardGameLose.gif */,
 				8BD7E5F928C88FF100AA0F11 /* HardGameWin.gif */,
 				8BD7E5F728C88E5900AA0F11 /* BasicGameLose.gif */,
 				8BD7E5F528C88DCD00AA0F11 /* BasicGameWin.gif */,
 				8BD7E5E728C88C6700AA0F11 /* AchievementsView.png */,
-				8BD7E5E428C88C6700AA0F11 /* GameView.png */,
 				8BD7E5E628C88C6700AA0F11 /* InstructionsView.png */,
 				8BD7E5E828C88C6700AA0F11 /* ResultView (Hard Lost).png */,
 				8BD7E5E528C88C6700AA0F11 /* ResultView (Hard Won).png */,
@@ -351,15 +351,14 @@
 				8B9DD85D28C725F500E0230C /* Achievements.json in Resources */,
 				8BD7E5FA28C88FF100AA0F11 /* HardGameWin.gif in Resources */,
 				8BD7E5F028C88C6700AA0F11 /* ResultView (Hard Won).png in Resources */,
-				8BD7E5FE28C890CB00AA0F11 /* MenuView.gif in Resources */,
 				8BD7E5EE28C88C6700AA0F11 /* StatisticsView.png in Resources */,
 				8BD7E5F628C88DCD00AA0F11 /* BasicGameWin.gif in Resources */,
 				8B9DD85B28C7209700E0230C /* background-music.mp3 in Resources */,
-				8BD7E5EF28C88C6700AA0F11 /* GameView.png in Resources */,
 				8BD7E5F828C88E5900AA0F11 /* BasicGameLose.gif in Resources */,
 				8BC5D59928AE0CBD00649C46 /* 5-Letter-Words in Resources */,
 				8BD7E5FC28C8906B00AA0F11 /* HardGameLose.gif in Resources */,
 				8B9DD85728C7209700E0230C /* lose-music.mp3 in Resources */,
+				8B42528628C9C00B00B6FBE6 /* MenuBarItems.gif in Resources */,
 				8B9DD85828C7209700E0230C /* lose-sfx.mp3 in Resources */,
 				8BD7E5EB28C88C6700AA0F11 /* ResultView (Won).png in Resources */,
 				8B9DD85928C7209700E0230C /* win-sfx.mp3 in Resources */,
@@ -368,6 +367,7 @@
 				8BD7E5F328C88C6700AA0F11 /* ResultView (Hard Lost).png in Resources */,
 				8BD7E5F428C88C6700AA0F11 /* SettingsView.png in Resources */,
 				8BD7E5ED28C88C6700AA0F11 /* ShareResultView.png in Resources */,
+				8B42528828C9C06600B6FBE6 /* GameView.png in Resources */,
 				8B9DD85628C7209700E0230C /* win-music.mp3 in Resources */,
 				8BD7E5F228C88C6700AA0F11 /* AchievementsView.png in Resources */,
 				8BD7E5EC28C88C6700AA0F11 /* SplashScreenView.png in Resources */,
