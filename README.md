@@ -24,7 +24,7 @@
 
 <p align="center">
   <img src="ViewScreenshots/SplashScreenView.png" width="250" > 
-  <img src="ViewScreenshots/GameView.png" width="250" > 
+  <img src="ViewScreenshots/" width="250" > 
   <img src="ViewScreenshots/SettingsView.png" width="250" > 
   <img src="ViewScreenshots/StatisticsView.png" width="250" > 
   <img src="ViewScreenshots/AchievementsView.png" width="250" >
